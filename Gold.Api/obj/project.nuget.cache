@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "S+KkLTPNvsE=",
+  "dgSpecHash": "DygOF9pPkMk=",
   "success": true,
   "projectFilePath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
   "expectedPackageFiles": [
@@ -249,8 +249,10 @@
     {
       "code": "NU1902",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'Microsoft.AspNetCore.Authentication.JwtBearer' 3.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-q7cg-43mg-qp69",
+      "projectPath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
       "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
       "targetGraphs": [
         "net5.0"
@@ -259,8 +261,10 @@
     {
       "code": "NU1903",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'Newtonsoft.Json' 12.0.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net5.0"
@@ -269,8 +273,10 @@
     {
       "code": "NU1902",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'System.DirectoryServices.Protocols' 4.6.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-9cxh-gqpx-qc5m",
+      "projectPath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Api\\Gold.Api.csproj",
       "libraryId": "System.DirectoryServices.Protocols",
       "targetGraphs": [
         "net5.0"
