@@ -1,0 +1,10 @@
+C:\visualstudio - dev\Gold.Core\bin\Debug\netcoreapp3.0\Gold.Core.deps.json
+C:\visualstudio - dev\Gold.Core\bin\Debug\netcoreapp3.0\Gold.Core.dll
+C:\visualstudio - dev\Gold.Core\bin\Debug\netcoreapp3.0\Gold.Core.pdb
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.AssemblyInfoInputs.cache
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.AssemblyInfo.cs
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.csproj.CoreCompileInputs.cache
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.dll
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.pdb
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\visualstudio - dev\Gold.Core\obj\Debug\netcoreapp3.0\Gold.Core.csproj.AssemblyReference.cache

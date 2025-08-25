@@ -1,0 +1,4688 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gold.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Gold.Core.Banks.Bank">
+            <summary>
+            Bank Information
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Banks.Bank.BankId">
+            <summary>
+            GUID of a Bank
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Banks.Bank.BankName">
+            <summary>
+            name of a Bank
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Banks.Bank.FintagIBAN">
+            <summary>
+            Fintag IBAN at this Bank
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Banks.Bank.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Banks.Bank.#ctor(System.String,System.String)">
+            <summary>
+            Creates new Bank
+            </summary>
+            <param name="name">Name of the Bank</param>
+            <param name="iban">Iban of Fintag</param>
+        </member>
+        <member name="T:Gold.Core.Events.Event">
+            <summary>
+            Event class represents a special event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.EventId">
+            <summary>
+            Database id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.EventName">
+            <summary>
+            Event name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.DateCreated">
+            <summary>
+            Event creation datetime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.CreatedBy">
+            <summary>
+            User id who created this event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.EventDate">
+            <summary>
+            Event date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.BalanceInGold">
+            <summary>
+            How much gold collected in the event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.GoldClaimed">
+            <summary>
+            Its true if event is complete
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.EventText">
+            <summary>
+            Event descriptive text
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.EventCode">
+            <summary>
+            Public event code
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Event.User">
+            <summary>
+            User who created this event
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Event.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Event.#ctor(System.String,System.String,System.DateTime,System.Guid,System.Int32)">
+            <summary>
+            Creates a new Event
+            </summary>
+            <param name="eventName">Event name</param>
+            <param name="eventText">Event text</param>
+            <param name="eventDate">Event date</param>
+            <param name="userId">Created by this user</param>
+            <param name="eventCode">Event public code</param>
+        </member>
+        <member name="T:Gold.Core.Events.GoldDay">
+            <summary>
+            GoldDay class represents a GoldDay
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayId">
+            <summary>
+            Database id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.CreatedBy">
+            <summary>
+            User id who created it
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GramAmount">
+            <summary>
+            Gram to be transfered by users each turn
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayCreationDateTime">
+            <summary>
+            Date created
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayTimeInterval">
+            <summary>
+            Time interval
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayStarted">
+            <summary>
+            True iff gold day initiated
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayCancelled">
+            <summary>
+            True iff gold day cancelled
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayComplete">
+            <summary>
+            True iff gold day completed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayName">
+            <summary>
+            Name of this gold day
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.UserAmount">
+            <summary>
+            User amount in the gold day
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GoldDayStartDateTime">
+            <summary>
+            Gold day start date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.GameDataFile">
+            <summary>
+            Gold day data file name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.GoldDay.User">
+            <summary>
+            User who created this gold day
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Events.GoldDay.ValidTypes">
+            <summary>
+            Time interval types
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.GoldDay.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.GoldDay.#ctor(System.Guid,System.String,System.Decimal,System.String,System.Int32,System.DateTime)">
+            <summary>
+            Creates new gold day
+            </summary>
+            <param name="userId">user who creates it</param>
+            <param name="name">name of the gold day</param>
+            <param name="grams">amount to be transferred</param>
+            <param name="timeType">time interval type</param>
+            <param name="userAmount">amount of users</param>
+            <param name="startDateTime">start date of the goldday</param>
+        </member>
+        <member name="M:Gold.Core.Events.GoldDay.NextDateTime(System.DateTime,System.String)">
+            <summary>
+            Calculates the next DateTime for the gold day
+            adds either 7days 15days or 1month to the given date
+            depending on the time interval
+            </summary>
+            <param name="then">previous due date</param>
+            <param name="interval">amount of dates to be added</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Core.Events.GoldDay.GenerateFile">
+            <summary>
+            Generates file to save Goldday data
+            </summary>
+        </member>
+        <member name="T:Gold.Core.Events.InternalLog">
+            <summary>
+            InternalLog class represents a log record
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.InternalLog.LogId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.InternalLog.UserId">
+            <summary>
+            user involved
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.InternalLog.LogDateTime">
+            <summary>
+            DateTime of the log record
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.InternalLog.Message">
+            <summary>
+            Message of the log
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.InternalLog.ArbitraryData">
+            <summary>
+            Any string data for admin use
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.InternalLog.User">
+            <summary>
+            User involved
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.InternalLog.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.InternalLog.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Creates new internal log
+            </summary>
+            <param name="userid">for this user</param>
+            <param name="message">with this message</param>
+            <param name="data">extra data</param>
+        </member>
+        <member name="T:Gold.Core.Events.Notification">
+            <summary>
+            Represents a notification for the app
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.NotificationId">
+            <summary>
+            Database unique id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.UserId">
+            <summary>
+            User id whom this notification for
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.Message">
+            <summary>
+            message of the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.Seen">
+            <summary>
+            true iff user seen the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.NotificationDateTime">
+            <summary>
+            Notification creation time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.SeenDateTime">
+            <summary>
+            Notification seen time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.Interactable">
+            <summary>
+            its true iff this notificaiton can be clicked by the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.Type">
+            <summary>
+            type of the notification (info / transfer...)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.RelatedId">
+            <summary>
+            this is a valid id if the notificaiton is interactable
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Notification.User">
+            <summary>
+            User of this notification
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Notification.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Notification.#ctor(System.Guid,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Creates new notification
+            </summary>
+            <param name="userId">User id</param>
+            <param name="message">The message</param>
+            <param name="seen">seen should be false</param>
+            <param name="inter">is it interactable</param>
+            <param name="type">what type of notification</param>
+            <param name="id">related id if interactable</param>
+        </member>
+        <member name="T:Gold.Core.Events.Transaction2">
+            <summary>
+            Represents a Transaction between two party
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Events.Transaction2._TransactionTypes">
+            <summary>
+            Types of the transactions
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Events.Transaction2._DestinationTypes">
+            <summary>
+            Possible destination types
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Events.Transaction2._SourceTypes">
+            <summary>
+            Possible source types
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.TransactionId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.TransactionType">
+            <summary>
+            Transaction type
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Source">
+            <summary>
+            Source of the transaction, who sends gold or cash or silver..
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.SourceType">
+            <summary>
+            Type of the source, can be user or fintag or ...
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.DestinationType">
+            <summary>
+            Type of the destination
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Destination">
+            <summary>
+            Destination of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Comment">
+            <summary>
+            Any comment goes here
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.TransactionDateTime">
+            <summary>
+            date and time of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Amount">
+            <summary>
+             Amount of the transaction generally represents grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Confirmed">
+            <summary>
+            Its true of tje transaction confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Cancelled">
+            <summary>
+            its true iff transaction is cancelled
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.GramAmount">
+            <summary>
+            Exact gram amount of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.TlAmount">
+            <summary>
+            Exact final TL amount of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.Yekun">
+            <summary>
+            Yekun value of soure
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Transaction2.YekunDestination">
+            <summary>
+            Yekun value of destination
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Transaction2.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Transaction2.#ctor(System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.Boolean)">
+            <summary>
+            Creates new transaction
+            </summary>
+            <param name="transactionType">Type of the transaction</param>
+            <param name="source">source id</param>
+            <param name="sourceType">source type</param>
+            <param name="destination">destination id</param>
+            <param name="destType">destination type</param>
+            <param name="amount">amount of grams or try</param>
+            <param name="comment">comment of transaction</param>
+            <param name="confirmed">is it confirmed</param>
+        </member>
+        <member name="T:Gold.Core.Events.User2">
+            <summary>
+            Represents a User
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.UserId">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.Role">
+            <summary>
+            Role of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.FamilyName">
+            <summary>
+            Family name of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.Email">
+            <summary>
+            Email of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.Photo">
+            <summary>
+            Photo link of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.Balance">
+            <summary>
+            Gold balance of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.IBAN">
+            <summary>
+            Iban of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.User2.MemberId">
+            <summary>
+            User member id to be displyed in the app
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.User2.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.User2.ManipulateBalance(System.Decimal)">
+            <summary>
+            Changes the Balance of the user
+            </summary>
+            <param name="value">Can be either negtive or positive value</param>
+        </member>
+        <member name="T:Gold.Core.Events.Wedding">
+            <summary>
+            Wedding class represents a special event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.WeddingId">
+            <summary>
+            Database id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.WeddingName">
+            <summary>
+            Event name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.DateCreated">
+            <summary>
+            Event creation datetime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.CreatedBy">
+            <summary>
+            User id who created this event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.WeddingDate">
+            <summary>
+            Event date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.BalanceInGold">
+            <summary>
+            How much gold collected in the event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.GoldClaimed">
+            <summary>
+            Its true if event is complete
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.WeddingText">
+            <summary>
+            Event descriptive text
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.WeddingCode">
+            <summary>
+            Public event code
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Events.Wedding.User">
+            <summary>
+            User who created this event
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Wedding.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Events.Wedding.#ctor(System.String,System.String,System.DateTime,System.Guid,System.Int32)">
+            <summary>
+            Creates a new Wedding
+            </summary>
+            <param name="weddingName">Event name</param>
+            <param name="weddingText">Event text</param>
+            <param name="weddingDate">Event date</param>
+            <param name="userId">Created by this user</param>
+            <param name="weddingCode">Event public code</param>
+        </member>
+        <member name="M:Gold.Core.Events.Wedding.UpdateWeddingText(System.String)">
+            <summary>
+            Updates wedding text
+            </summary>
+            <param name="text">Text to be displayed</param>
+        </member>
+        <member name="T:Gold.Core.GoldPrices.GoldPrice">
+            <summary>
+            Gold price class, represents a valuable data in the rutime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.GoldPrices.GoldPrice.GoldPriceId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.GoldPrices.GoldPrice.Name">
+            <summary>
+            Name of the variable
+            </summary>
+        </member>
+        <member name="P:Gold.Core.GoldPrices.GoldPrice.Amount">
+            <summary>
+            If true there is amount 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.GoldPrices.GoldPrice.Percentage">
+            <summary>
+            if true there is percentagec
+            </summary>
+        </member>
+        <member name="M:Gold.Core.GoldPrices.GoldPrice.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="T:Gold.Core.PanelUsers.PanelUser">
+            <summary>
+            PaNel user class currently not in use
+            </summary>
+        </member>
+        <member name="P:Gold.Core.PanelUsers.PanelUser.PanelUserId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.PanelUsers.PanelUser.NameSurname">
+            <summary>
+            Name of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.PanelUsers.PanelUser.Role">
+            <summary>
+            User role
+            </summary>
+        </member>
+        <member name="P:Gold.Core.PanelUsers.PanelUser.Email">
+            <summary>
+            Email of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.PanelUsers.PanelUser.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.PanelUsers.PanelUser.MobileNumber">
+            <summary>
+            Phone number of the user
+            </summary>
+        </member>
+        <member name="M:Gold.Core.PanelUsers.PanelUser.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.PanelUsers.PanelUser.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates new panel user
+            </summary>
+            <param name="role">Role of the user</param>
+            <param name="nameSurname">Name of the user</param>
+            <param name="email">email of the user</param>
+            <param name="password">user's password</param>
+            <param name="mobile">mobile number of the user</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.Event2">
+            <summary>
+            Event class represents a special event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.EventId">
+            <summary>
+            Database id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.EventName">
+            <summary>
+            Event name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.DateCreated">
+            <summary>
+            Event creation datetime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.CreatedBy">
+            <summary>
+            User id who created this event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.EventDate">
+            <summary>
+            Event date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.BalanceInGold">
+            <summary>
+            How much gold collected in the event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.GoldClaimed">
+            <summary>
+            Its true if event is complete
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.EventText">
+            <summary>
+            Event descriptive text
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.EventCode">
+            <summary>
+            Public event code
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Event2.User">
+            <summary>
+            User who created this event
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Event2.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Event2.ClaimGold(System.String@)">
+            <summary>
+            Ends the event
+            </summary>
+            <param name="message">If any error, error message displayed here</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Core.Transactions.Event2.AddGold(System.Decimal)">
+            <summary>
+            Adds balance to event
+            </summary>
+            <param name="grams"></param>
+        </member>
+        <member name="T:Gold.Core.Transactions.GoldtagExpected">
+            <summary>
+            Represents an expected cash for goldtag app
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.ExpectedGoldtagId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.BankTransferId">
+            <summary>
+            bank transfer id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.ExpectedSuffix">
+            <summary>
+            expected suffix in kt
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.ExpectedTRY">
+            <summary>
+             expected try amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.RateFxId">
+            <summary>
+            Rate fx id should be 24 for gold 26 for silver ...
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.Amount">
+            <summary>
+            Grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.ExpectedDateTime">
+            <summary>
+            When we started to expect
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.KTGramFiyat">
+            <summary>
+            KT gram price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.PiyasaGramFiyat">
+            <summary>
+            general price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.SatisGramFiyat">
+            <summary>
+            goldtag price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagExpected.Notes">
+            <summary>
+            Extra comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagExpected.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagExpected.#ctor(System.Guid,System.Guid,System.String,System.Decimal,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Creates new expected cash
+            </summary>
+            <param name="userId">users id</param>
+            <param name="bankTransferId">bank transfer id</param>
+            <param name="suffix">expected suffix</param>
+            <param name="expectedTRY">expected try amount</param>
+            <param name="fxid">rate fx id for checking rate</param>
+            <param name="amount">amount of mineral</param>
+            <param name="ktfiyat">1 gr price of kt</param>
+            <param name="piyasaFiyat">1 gr price of general public</param>
+            <param name="satisFiyat">1 gr price of goldtag</param>
+            <param name="notes">any extra comment</param>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagExpected.ToString">
+            <summary>
+            String representation
+            </summary>
+            <returns>a string representation of this class</returns>
+        </member>
+        <member name="T:Gold.Core.Transactions.GoldtagFinalized">
+            <summary>
+            Represetns a finalized transaction for goldtag app
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.FinalizedId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.UserId">
+            <summary>
+            User ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.TransactionId">
+            <summary>
+            Transaction ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.FinalizedDateTime">
+            <summary>
+            Finalized date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.Amount">
+            <summary>
+            Gram amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.TLAmount">
+            <summary>
+            TRY amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.Maden">
+            <summary>
+            Mineral type
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagFinalized.Comments">
+            <summary>
+            Comments for the transaction
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagFinalized.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagFinalized.#ctor(System.Guid,System.Guid,System.Decimal,System.Decimal,System.String,System.String)">
+            <summary>
+            Creates nwe goldtagfinalized
+            </summary>
+            <param name="userId">id of the user</param>
+            <param name="transId">id of the transaction</param>
+            <param name="amount">grams amount</param>
+            <param name="tlAmount">try amount</param>
+            <param name="maden">mineral type</param>
+            <param name="comments">arbitrary comments</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.GoldtagNotPosition">
+            <summary>
+            Represetns a transaction where position not closed yet
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.NotPosId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.BankTransferId">
+            <summary>
+            bank transfer id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.ExpectedSuffix">
+            <summary>
+            expected suffix in kt
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.ReceivedTRY">
+            <summary>
+            amount of received try
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.RateFxId">
+            <summary>
+            fx id for the mineral
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.MoneyReceivedDateTime">
+            <summary>
+            money receive time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.ThatMomentBuyRate">
+            <summary>
+            fintag rate at the time of money receive
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.GramAmount">
+            <summary>
+            transaction gram amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.PiyasaGramFiyat">
+            <summary>
+            general price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.KTGramFiyat">
+            <summary>
+            KT gram price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.SatisGramFiyat">
+            <summary>
+            goldtag price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.KTHareketReferans">
+            <summary>
+            KT reference
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotPosition.Notes">
+            <summary>
+            Extra comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagNotPosition.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagNotPosition.#ctor(System.Guid,System.Guid,System.String,System.Decimal,System.Int32,System.DateTime,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String,System.String)">
+            <summary>
+            Creates new not position
+            </summary>
+            <param name="userId">user id</param>
+            <param name="bankTransId">bank trans id</param>
+            <param name="suffix">expected suffix</param>
+            <param name="received">received try</param>
+            <param name="fxid">fx id of mineral</param>
+            <param name="thatMoment">current time</param>
+            <param name="momentBuyRate">current buy rate</param>
+            <param name="gramAmount">gram amount of trans</param>
+            <param name="pFiyat">general price</param>
+            <param name="ktFiyat">kt price</param>
+            <param name="satisFiyat">goldtag price</param>
+            <param name="ktReferans">kt execution reference</param>
+            <param name="notes">extra notes</param>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagNotPosition.ToString">
+            <summary>
+            String representation
+            </summary>
+            <returns>a string representation of this class</returns>
+        </member>
+        <member name="T:Gold.Core.Transactions.GoldtagNotReceived">
+            <summary>
+            Represents a transaction where money never arrived
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.NotReceivedId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.BankTransferId">
+            <summary>
+            bank transfer id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.ExpectedSuffix">
+            <summary>
+            expected suffix in kt
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.ExpectedTRY">
+            <summary>
+             expected try amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.RateFxId">
+            <summary>
+            Rate fx id should be 24 for gold 26 for silver ...
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.GramAmount">
+            <summary>
+            Grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.ExpectedDateTime">
+            <summary>
+            When we started to expect
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.CurrentDateTime">
+            <summary>
+            Current time when this instance created
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.TimeDiffSeconds">
+            <summary>
+            Time difference between current time and expected time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.KTGramFiyat">
+            <summary>
+            KT gram price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.PiyasaGramFiyat">
+            <summary>
+            general price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.SatisGramFiyat">
+            <summary>
+            goldtag price at the moment of creation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagNotReceived.Notes">
+            <summary>
+            extra notes
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagNotReceived.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagNotReceived.#ctor(System.Guid,System.Guid,System.String,System.Decimal,System.Int32,System.DateTime,System.DateTime,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Creates new not received
+            </summary>
+            <param name="userId">user id</param>
+            <param name="bankTransferId">bank id</param>
+            <param name="suffix">suffix</param>
+            <param name="expectedTRY">expectedTRY</param>
+            <param name="fxid">fxid</param>
+            <param name="expectedDateTime">expectedDateTime</param>
+            <param name="currentTime">currentTime</param>
+            <param name="diffSecond">diffSecond</param>
+            <param name="amount">amount</param>
+            <param name="ktfiyat">ktfiyat</param>
+            <param name="piyasaFiyat">piyasaFiyat</param>
+            <param name="satisFiyat">satisFiyat</param>
+            <param name="notes">notes</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.GoldtagUnexpected">
+            <summary>
+            Represents a transaction where outcome was unexpected
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.UnexpectedId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.BankTransferId">
+            <summary>
+            bank transfer id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.ExpectedTL">
+            <summary>
+             expected try amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.ReceivedTL">
+            <summary>
+             received try amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.UnexpectedDateTime">
+            <summary>
+            Time of the creation of this instance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.GoldtagUnexpected.Notes">
+            <summary>
+            extra notes
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagUnexpected.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.GoldtagUnexpected.#ctor(System.Guid,System.Guid,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Creates new GoldtagUnexpected
+            </summary>
+            <param name="userId">userId</param>
+            <param name="bankTransId">bankTransId</param>
+            <param name="expectedTL">expectedTL</param>
+            <param name="receivedTL">receivedTL</param>
+            <param name="notes">notes</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.InternalLog">
+            <summary>
+            Internal Activity Logging
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.InternalLog.LogId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.InternalLog.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.InternalLog.LogDateTime">
+            <summary>
+            Log date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.InternalLog.Message">
+            <summary>
+            Message related to log
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.InternalLog.ArbitraryData">
+            <summary>
+            Any data
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.InternalLog.User">
+            <summary>
+            User related to log
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.InternalLog.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.InternalLog.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Creates new InternalLog
+            </summary>
+            <param name="userid">User id</param>
+            <param name="message">Log Message</param>
+            <param name="data">Log Data</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.Notification2">
+            <summary>
+            Represents a notification for the app
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.NotificationId">
+            <summary>
+            Database unique id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.UserId">
+            <summary>
+            User id whom this notification for
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.Message">
+            <summary>
+            message of the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.Seen">
+            <summary>
+            true iff user seen the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.Delivered">
+            <summary>
+            True if notification is delivered
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.NotificationDateTime">
+            <summary>
+            Notification creation time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.SeenDateTime">
+            <summary>
+            Notification seen time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.Interactable">
+            <summary>
+            its true iff this notificaiton can be clicked by the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.Type">
+            <summary>
+            type of the notification (info / transfer...)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.RelatedId">
+            <summary>
+            this is a valid id if the notificaiton is interactable
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.Photo">
+            <summary>
+            photo to be seen in the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Notification2.User">
+            <summary>
+            user related to notification
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Notification2.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Notification2.#ctor(System.Guid,System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Creates new notification
+            </summary>
+            <param name="userId">User id</param>
+            <param name="message">The message</param>
+            <param name="inter">is it interactable</param>
+            <param name="type">what type of notification</param>
+            <param name="id">related id if interactable</param>
+            <param name="photo">photo of the notification</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.SilverBalance">
+            <summary>
+            Stores user's silver balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.SilverBalance.SilverId">
+            <summary>
+            Database unique id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.SilverBalance.UserId">
+            <summary>
+            User id of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.SilverBalance.Balance">
+            <summary>
+            Silver balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.SilverBalance.BlockedGrams">
+            <summary>
+            Blocked gra,s
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.SilverBalance.Comments">
+            <summary>
+            Arbitrary comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.SilverBalance.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.SilverBalance.#ctor(System.Guid)">
+            <summary>
+            Creates new silverbalance for given user
+            </summary>
+            <param name="userId"></param>
+        </member>
+        <member name="T:Gold.Core.Transactions.Transaction">
+            <summary>
+            Represents a Transaction between two party
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Transactions.Transaction._TransactionTypes">
+            <summary>
+            Types of the transactions
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Transactions.Transaction._DestinationTypes">
+            <summary>
+            Possible destination types
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Transactions.Transaction._SourceTypes">
+            <summary>
+            Possible source types
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.TransactionId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.TransactionType">
+            <summary>
+            Transaction type
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Source">
+            <summary>
+            Source of the transaction, who sends gold or cash or silver..
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.SourceType">
+            <summary>
+            Type of the source, can be user or fintag or ...
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.DestinationType">
+            <summary>
+            Type of the destination
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Destination">
+            <summary>
+            Destination of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Comment">
+            <summary>
+            Any comment goes here
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.TransactionDateTime">
+            <summary>
+            date and time of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Amount">
+            <summary>
+             Amount of the transaction generallt represents grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Confirmed">
+            <summary>
+            Its true of tje transaction confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Cancelled">
+            <summary>
+            its true iff transaction is cancelled
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.GramAmount">
+            <summary>
+            Exact gram amount of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.TlAmount">
+            <summary>
+            Exact final TL amount of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.Yekun">
+            <summary>
+            Yekun value of soure
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Transaction.YekunDestination">
+            <summary>
+            Yekun value of destination
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Transaction.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Transaction.#ctor(System.String,System.String,System.String,System.String,System.String,System.Decimal,System.String,System.Boolean,System.Decimal,System.Decimal)">
+            <summary>
+            Creates new transaction
+            </summary>
+            <param name="transactionType">Type of the transaction</param>
+            <param name="source">source id</param>
+            <param name="sourceType">source type</param>
+            <param name="destination">destination id</param>
+            <param name="destType">destination type</param>
+            <param name="amount">amount of grams or try</param>
+            <param name="comment">comment of transaction</param>
+            <param name="confirmed">is it confirmed</param>
+            <param name="gramAmount">gram amount</param>
+            <param name="tlAmount">try amount</param>
+        </member>
+        <member name="M:Gold.Core.Transactions.Transaction.TransactionHtml">
+            <summary>
+            Returns what would be the html file name of this transactio
+            Simply adds .html at the end of transactionId
+            </summary>
+            <returns>html file name</returns>
+        </member>
+        <member name="M:Gold.Core.Transactions.Transaction.Confirm">
+            <summary>
+            Confirms transaction
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Transaction.Cancel(System.String)">
+            <summary>
+            Cancels transaction
+            </summary>
+            <param name="comment">Reason for cancellation</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.TransferRequest">
+            <summary>
+            Represents a Transfer Request from User to User or Event or Fintag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.TransferRequestId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.GramsOfGold">
+            <summary>
+            Total grams to be transferred
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.SourceUserId">
+            <summary>
+            User who wants to transfer
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.DestinationType">
+            <summary>
+            Destination type
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.Destination">
+            <summary>
+            Destination id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.RequestDateTime">
+            <summary>
+            DateTime of the request
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.RequestConfirmed">
+            <summary>
+            True iff user confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.ConfirmationDateTime">
+            <summary>
+            DateTIme of the confirmation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.Comments">
+            <summary>
+            Transfer comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.RequestCompleted">
+            <summary>
+            True iff transfer completed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.TransactionRecord">
+            <summary>
+            Transaction related to this transfer request
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.SourceUser">
+            <summary>
+            Source user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.TransferRequest.Transaction">
+            <summary>
+            Transaction record
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.TransferRequest.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.TransferRequest.#ctor(System.Guid,System.Decimal,System.String,System.String,System.Guid,System.String)">
+            <summary>
+            Creates new transfer request
+            </summary>
+            <param name="sourceUserId">Source user id</param>
+            <param name="gramsOfGold">Total grams to be transferred</param>
+            <param name="destType">Destination type</param>
+            <param name="destination">Destination ID</param>
+            <param name="transactionId">Transaction ID</param>
+            <param name="comments">Comments for transaction</param>
+        </member>
+        <member name="M:Gold.Core.Transactions.TransferRequest.CompleteTransfer">
+            <summary>
+            Completes transfer
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.TransferRequest.UpdateComment(System.String)">
+            <summary>
+            Updates comments
+            </summary>
+            <param name="comment">Comment to be added</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.User3">
+            <summary>
+            Represents a User
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.UserId">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.Role">
+            <summary>
+            Role of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.FamilyName">
+            <summary>
+            Family name of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.Email">
+            <summary>
+            Email of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.Phone">
+            <summary>
+            Phone of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.Balance">
+            <summary>
+            User Gold balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.IBAN">
+            <summary>
+            IBAN of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.MemberId">
+            <summary>
+            User given member id for app
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.Verified">
+            <summary>
+            True iff user is verified to lvl 1
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.DateCreated">
+            <summary>
+            Date created
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.User3.BlockedGrams">
+            <summary>
+            Blocked grams
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.User3.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.User3.ManipulateBalance(System.Decimal)">
+            <summary>
+            Changes the Balance of the user
+            </summary>
+            <param name="value">Can be either negtive or positive value</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.UserBankTransferRequest">
+            <summary>
+            Represents a user bank transfer request
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.BankTransferId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.SpecialCode">
+            <summary>
+            Special code for transfer description
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.BankId">
+            <summary>
+            Bank id of the bank where user needs to transfer cash
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.CodeStartDateTime">
+            <summary>
+            Code generation date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.TransferRequestId">
+            <summary>
+            Transfer request related to this bank transfer
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.MoneyReceived">
+            <summary>
+            True iff money is received by goldtag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.UserId">
+            <summary>
+            User id of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.User">
+            <summary>
+            User of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.TransferRequest">
+            <summary>
+            Related transfer request
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserBankTransferRequest.Bank">
+            <summary>
+            Related bank
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.UserBankTransferRequest.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.UserBankTransferRequest.#ctor(System.Int32,System.Guid,System.Guid,System.Guid)">
+            <summary>
+            Creates mew UserBankTransferRequest
+            </summary>
+            <param name="code">Special Code</param>
+            <param name="bankId">Id of the bank</param>
+            <param name="transferId">Id of the transfer</param>
+            <param name="userId">Id of the User</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.UserLevel">
+            <summary>
+            Represents a User Level
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserLevel.LevelId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserLevel.UserId">
+            <summary>
+            User id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.UserLevel.Value">
+            <summary>
+             User level 0, 1, 2
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.UserLevel.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.UserLevel.#ctor(System.Guid)">
+            <summary>
+            Creates new user level for a user 
+            Starts from level 0
+            </summary>
+            <param name="userId">User id of the user</param>
+        </member>
+        <member name="M:Gold.Core.Transactions.UserLevel.#ctor(System.Guid,System.Int32)">
+            <summary>
+            Creates new user lvel for a user
+            Starts from given level
+            </summary>
+            <param name="userId">User id of the user</param>
+            <param name="value">Given level</param>
+        </member>
+        <member name="T:Gold.Core.Transactions.Wedding">
+            <summary>
+            Wedding class represetns a wedding
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.WeddingId">
+            <summary>
+            Database id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.WeddingName">
+            <summary>
+            Event name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.DateCreated">
+            <summary>
+            Event creation datetime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.CreatedBy">
+            <summary>
+            User id who created this event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.WeddingDate">
+            <summary>
+            Event date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.BalanceInGold">
+            <summary>
+            How much gold collected in the event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.GoldClaimed">
+            <summary>
+            Its true if event is complete
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.WeddingText">
+            <summary>
+            Event descriptive text
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.WeddingCode">
+            <summary>
+            Public event code
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Transactions.Wedding.User">
+            <summary>
+            User who created this event
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Wedding.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Transactions.Wedding.ClaimGold(System.String@)">
+            <summary>
+            Claims the gold/silver
+            </summary>
+            <param name="message">Output message</param>
+            <returns>Amount of gold/silver claimed or 0</returns>
+        </member>
+        <member name="M:Gold.Core.Transactions.Wedding.AddGold(System.Decimal)">
+            <summary>
+            Adds grams to the event
+            </summary>
+            <param name="grams">Grams to be added</param>
+        </member>
+        <member name="T:Gold.Core.Users.BannedIp">
+            <summary>
+            Represents a banned Ip
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.BannedIp.BannedIpId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.BannedIp.IP">
+            <summary>
+            IP address that is banned
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.BannedIp.BannedDateTime">
+            <summary>
+            Date time of the ban
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.BannedIp.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.BannedIp.#ctor(System.String)">
+            <summary>
+            Creates new BannedIp record
+            </summary>
+            <param name="ip">IP to be banned</param>
+        </member>
+        <member name="T:Gold.Core.Users.Cekilis">
+            <summary>
+            Represents a sweepstakes
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Cekilis.CekilisId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Cekilis.Name">
+            <summary>
+            Name of the sweepstakes
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Cekilis.Prize">
+            <summary>
+            Prize of the event
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Cekilis.SonKatilimTarihi">
+            <summary>
+            Final entry DateTime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Cekilis.PlanlananCekilisTarihi">
+            <summary>
+            Planned event time
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Cekilis.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Cekilis.#ctor(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Creates new Cekilis
+            </summary>
+            <param name="name">Name of the cekilis</param>
+            <param name="prize">PRize of the cekilis</param>
+            <param name="skt">Final entry datetime</param>
+            <param name="pct">planned cekilis datetime</param>
+        </member>
+        <member name="T:Gold.Core.Users.CekilisHak">
+            <summary>
+            Represents a single or many entry for a specific cekilis
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.CekilisHak.HakId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.CekilisHak.CekilisId">
+            <summary>
+            Cekilis id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.CekilisHak.UserId">
+            <summary>
+            User id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.CekilisHak.CekilisHakki">
+            <summary>
+            Amount of entries
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.CekilisHak.SonHakAlisTarihi">
+            <summary>
+            Last date time when user received new entry
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.CekilisHak.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.CekilisHak.#ctor(System.Guid,System.Guid)">
+            <summary>
+            creates new CEkilis hak for a given cekilis and user
+            </summary>
+            <param name="userId">User to be added for entry</param>
+            <param name="cekId">Cekilis to be entered</param>
+        </member>
+        <member name="T:Gold.Core.Users.ForgotPassword">
+            <summary>
+            Represents a forgot password entry
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ForgotPassword.ForgotId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ForgotPassword.UserId">
+            <summary>
+            User id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ForgotPassword.ForgotRequestDateTime">
+            <summary>
+            Datetime of the request
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ForgotPassword.GeneratedCode">
+            <summary>
+            Special generated code
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ForgotPassword.User">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.ForgotPassword.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.ForgotPassword.#ctor(System.Guid,System.Int32)">
+            <summary>
+            Creates new forgot password entry
+            </summary>
+            <param name="userId">for the user</param>
+            <param name="code">code that is generated</param>
+        </member>
+        <member name="T:Gold.Core.Users.InternalLog">
+            <summary>
+            Internal Activity Logging
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.InternalLog.LogId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.InternalLog.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.InternalLog.LogDateTime">
+            <summary>
+            Log date time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.InternalLog.Message">
+            <summary>
+            Message related to log
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.InternalLog.ArbitraryData">
+            <summary>
+            Any data
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.InternalLog.User">
+            <summary>
+            User related to log
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.InternalLog.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.InternalLog.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Creates new InternalLog
+            </summary>
+            <param name="userid">User id</param>
+            <param name="message">Log Message</param>
+            <param name="data">Log Data</param>
+        </member>
+        <member name="T:Gold.Core.Users.KimlikInfo">
+            <summary>
+            Represents an Identification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.KimlikInfo.KimlikInfoId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.KimlikInfo.UserId">
+            <summary>
+            User id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.KimlikInfo.KimlikImageLink">
+            <summary>
+            Image photo of the Identification (passport or national id)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.KimlikInfo.UploadDateTime">
+            <summary>
+            DateTime of the upload
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.KimlikInfo.Confirmed">
+            <summary>
+            True iff identification is validated by an admin
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.KimlikInfo.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.KimlikInfo.#ctor(System.Guid,System.String)">
+            <summary>
+            Creates new kimlikinfo
+            </summary>
+            <param name="userId">user id</param>
+            <param name="imageLink">identification photo link</param>
+        </member>
+        <member name="M:Gold.Core.Users.KimlikInfo.Confirm">
+            <summary>
+            Confirms the identification
+            </summary>
+        </member>
+        <member name="T:Gold.Core.Users.Login">
+            <summary>
+            Represents a Succesful login to the system
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.LoginId">
+            <summary>
+            Db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.LoginDateTime">
+            <summary>
+            Datetime of the login
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.LogoutDateTime">
+            <summary>
+            Datetime of the logout if the user logged out
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.IP">
+            <summary>
+            IP address used while login attempt into the system
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.Random">
+            <summary>
+            Random string
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Login.User">
+            <summary>
+            User related to login
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Login.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Login.#ctor(System.Guid,System.String,System.DateTime,System.String)">
+            <summary>
+            Creates new login record
+            </summary>
+            <param name="userid">user's id</param>
+            <param name="ip">user's ip address</param>
+            <param name="dateTime">datetime of the attempt</param>
+            <param name="rand">random string</param>
+        </member>
+        <member name="M:Gold.Core.Users.Login.LogOut">
+            <summary>
+            Logs out the user
+            </summary>
+        </member>
+        <member name="T:Gold.Core.Users.Notification">
+            <summary>
+            Represents a notification for the app
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.NotificationId">
+            <summary>
+            Database unique id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.UserId">
+            <summary>
+            User id whom this notification for
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.Message">
+            <summary>
+            message of the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.Seen">
+            <summary>
+            true iff user seen the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.Delivered">
+            <summary>
+            True if notification is delivered
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.NotificationDateTime">
+            <summary>
+            Notification creation time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.SeenDateTime">
+            <summary>
+            Notification seen time
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.Interactable">
+            <summary>
+            its true iff this notificaiton can be clicked by the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.Type">
+            <summary>
+            type of the notification (info / transfer...)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.RelatedId">
+            <summary>
+            this is a valid id if the notificaiton is interactable
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.Photo">
+            <summary>
+            photo to be seen in the notification
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.Notification.User">
+            <summary>
+            user related to notification
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Notification.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Notification.#ctor(System.Guid,System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Creates new notification
+            </summary>
+            <param name="userId">User id</param>
+            <param name="message">The message</param>
+            <param name="inter">is it interactable</param>
+            <param name="type">what type of notification</param>
+            <param name="id">related id if interactable</param>
+            <param name="photo">photo of the notification</param>
+        </member>
+        <member name="M:Gold.Core.Users.Notification.SeeNotification">
+            <summary>
+            to be called when user sees notification
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.Notification.DeliverNotification">
+            <summary>
+            to be called when notification delivered but not seen yet
+            </summary>
+        </member>
+        <member name="T:Gold.Core.Users.ProfileChange">
+            <summary>
+            Records a profile change activity
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.ChangeId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.ChangeType">
+            <summary>
+            Type of change
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.OldValue">
+            <summary>
+            Former value (example old password)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.NewValue">
+            <summary>
+            Newly obtained value (example new password)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.ChangeDateTime">
+            <summary>
+            Datetime of the change
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.IP">
+            <summary>
+            IP address during the change
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ProfileChange.User">
+            <summary>
+            User who made the change
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.ProfileChange.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.ProfileChange.#ctor(System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new profile change record
+            </summary>
+            <param name="userid">User's id</param>
+            <param name="type">Type of change</param>
+            <param name="old">Former value</param>
+            <param name="nw">New Value</param>
+            <param name="ip">IP Address</param>
+        </member>
+        <member name="T:Gold.Core.Users.ReferansCode">
+            <summary>
+            Represents a special reference code for a User
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ReferansCode.RefCodeId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ReferansCode.UserId">
+            <summary>
+            User's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.ReferansCode.ReferansKod">
+            <summary>
+            Reference Code of the user
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.ReferansCode.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.ReferansCode.#ctor(System.Guid,System.Int32)">
+            <summary>
+            Creates new ReferanceCode
+            </summary>
+            <param name="userId">user's id</param>
+            <param name="code">reference code</param>
+        </member>
+        <member name="T:Gold.Core.Users.SilverBalance">
+            <summary>
+            Stores user's silver balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.SilverBalance.SilverId">
+            <summary>
+            Database unique id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.SilverBalance.UserId">
+            <summary>
+            User id of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.SilverBalance.Balance">
+            <summary>
+            Silver balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.SilverBalance.BlockedGrams">
+            <summary>
+            Blocked gra,s
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.SilverBalance.Comments">
+            <summary>
+            Arbitrary comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.SilverBalance.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.SilverBalance.#ctor(System.Guid)">
+            <summary>
+            Creates new silverbalance for given user
+            </summary>
+            <param name="userId"></param>
+        </member>
+        <member name="T:Gold.Core.Users.User">
+            <summary>
+            Represents a User
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Users.User._Roles">
+            <summary>
+            User Roles that can be used
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.UserId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Role">
+            <summary>
+            Role of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.FirstName">
+            <summary>
+            First name (also middle name)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.FamilyName">
+            <summary>
+            Family name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Birthdate">
+            <summary>
+            Date of birth
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.TcKimlikNo">
+            <summary>
+            TCK number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Phone">
+            <summary>
+            Mobile number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Photo">
+            <summary>
+            Photo link
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Balance">
+            <summary>
+            GOLD balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.IBAN">
+            <summary>
+            IBAN of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.MemberId">
+            <summary>
+            Member id generated by goldtag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Verified">
+            <summary>
+            If true user can be considered lvl 1 (old system)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.Banned">
+            <summary>
+            If true then user must complete SmS validation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.AdminNotes">
+            <summary>
+            Special comments by admins (to be used for banning etc.)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.DateCreated">
+            <summary>
+            User register time and date
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.AmountOfDeposits">
+            <summary>
+            Amount of total deposits
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.AmountOfWithdrawals">
+            <summary>
+             Aount of total withdraws
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.User.BlockedGrams">
+            <summary>
+            Blocked gold grams
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.User.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.User.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new User
+            </summary>
+            <param name="memberId">Memebr id of the user 9 digits</param>
+            <param name="firstName">First and middle name</param>
+            <param name="familyName">Family name</param>
+            <param name="email">Email address</param>
+            <param name="pass">Password</param>
+            <param name="tck">TCK number</param>
+            <param name="phone">Phone (must be valid)</param>
+            <param name="birthDate">Birthdate</param>
+            <param name="role">User role</param>
+        </member>
+        <member name="M:Gold.Core.Users.User.CreateUnregisteredUser(System.String,System.String,System.String)">
+            <summary>
+            Creates unregistered user (experimental constructor)
+            </summary>
+            <param name="firstName">First name</param>
+            <param name="familyName">family name</param>
+            <param name="birthDate">birth date</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Core.Users.User.VerifySignUp">
+            <summary>
+            Verifies SmS
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.User.ManipulateBalance(System.Decimal)">
+            <summary>
+            Changes the Balance of the user
+            </summary>
+            <param name="value">Can be either negtive or positive value</param>
+        </member>
+        <member name="M:Gold.Core.Users.User.UpdatePhone(System.String)">
+            <summary>
+            Updated the users phone number assuming the phone number already validated
+            </summary>
+            <param name="newPhone">new phone number</param>
+        </member>
+        <member name="M:Gold.Core.Users.User.UpdateIban(System.String)">
+            <summary>
+            UPdates users Iban number assuming its been validated
+            </summary>
+            <param name="iban">new iban value</param>
+        </member>
+        <member name="M:Gold.Core.Users.User.UpdateRole(System.String)">
+            <summary>
+            Updates user role
+            </summary>
+            <param name="role">new user role</param>
+        </member>
+        <member name="M:Gold.Core.Users.User.PermanentlyBanUser(System.String)">
+            <summary>
+            Bans user from the system
+            </summary>
+            <param name="reason">Reason for the ban</param>
+        </member>
+        <member name="M:Gold.Core.Users.User.LiftUserBan(System.String)">
+            <summary>
+            Lifts user ban
+            </summary>
+            <param name="reason">Reason for the lift</param>
+        </member>
+        <member name="T:Gold.Core.Users.UserLevel">
+            <summary>
+            Represents a User Level
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.UserLevel.LevelId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.UserLevel.UserId">
+            <summary>
+            User id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.UserLevel.Value">
+            <summary>
+             User level 0, 1, 2
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.UserLevel.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.UserLevel.#ctor(System.Guid)">
+            <summary>
+            Creates new user level for a user 
+            Starts from level 0
+            </summary>
+            <param name="userId">User id of the user</param>
+        </member>
+        <member name="M:Gold.Core.Users.UserLevel.#ctor(System.Guid,System.Int32)">
+            <summary>
+            Creates new user lvel for a user
+            Starts from given level
+            </summary>
+            <param name="userId">User id of the user</param>
+            <param name="value">Given level</param>
+        </member>
+        <member name="T:Gold.Core.Users.UserRef">
+            <summary>
+            Represents an action where user referenced another user during registration
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.UserRef.UserRefId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.UserRef.UserId">
+            <summary>
+            User who used the reference code
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Users.UserRef.UsedRefKod">
+            <summary>
+            Reference code that is used
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.UserRef.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Users.UserRef.#ctor(System.Guid,System.Int32)">
+            <summary>
+            Creates new user ref
+            </summary>
+            <param name="userId">User who is using a ref code</param>
+            <param name="usedCode">Ref code of another user</param>
+        </member>
+        <member name="T:Gold.Core.Utilities">
+            <summary>
+            utility methods
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Utilities.ArrayContains(System.String[],System.String)">
+            <summary>
+            returns true if item is in array
+            </summary>
+            <param name="array">array to be searched</param>
+            <param name="item">item that is being searched</param>
+            <returns></returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.BannedIp2">
+            <summary>
+            Represents a banned Ip
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.BannedIp2.BannedIpId">
+            <summary>
+            DB Id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.BannedIp2.IP">
+            <summary>
+            IP address that is banned
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.BannedIp2.BannedDateTime">
+            <summary>
+            Date time of the ban
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.BannedIp2.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.BannedIp2.#ctor(System.String)">
+            <summary>
+            Creates new BannedIp record
+            </summary>
+            <param name="ip">IP to be banned</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.ExpectedCash">
+            <summary>
+            Depreciated expected cash entity
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.ExpectedId">
+            <summary>
+            Db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.VendorId">
+            <summary>
+            Vendor's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.TransactionId">
+            <summary>
+            Transaction id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.VendorReferenceId">
+            <summary>
+            Vendor's reference id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.ExpectedSuffix">
+            <summary>
+            expected suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.ExpectedTRY">
+            <summary>
+            expected try amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.RateFxId">
+            <summary>
+            exchange rate id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.Amount">
+            <summary>
+            gram amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.PiyasaGramFiyat">
+            <summary>
+            public price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.KTGramFiyat">
+            <summary>
+            KT price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.SatisGramFiyat">
+            <summary>
+            Goldtag price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.ExpectedCash.DateTime">
+            <summary>
+            Datetime this entity created
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.ExpectedCash.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.ExpectedCash.#ctor(System.Guid,System.Guid,System.String,System.String,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates mew expected chas
+            </summary>
+            <param name="vendorId">vendor's id</param>
+            <param name="transId">transaction id</param>
+            <param name="referance">vendor ref</param>
+            <param name="suffix">expected suffix</param>
+            <param name="fxId">exchange rate id</param>
+            <param name="tl">try amount</param>
+            <param name="grams">gram amount</param>
+            <param name="piy">public price</param>
+            <param name="kt">kt price</param>
+            <param name="sat">goldtag price</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.ExpectedCash.ToString">
+            <summary>
+            String representation
+            </summary>
+            <returns>a string representation of this class</returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.FinalizedGold">
+            <summary>
+            Depreciated finalized gold entity
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.FinalizedId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.VendorId">
+            <summary>
+            Vendor's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.TransactionId">
+            <summary>
+            Transaction id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.VendorReferenceId">
+            <summary>
+            Vendor's reference id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.DateTime">
+            <summary>
+            Datetime this entity created
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.TLAmount">
+            <summary>
+            TRY Amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.GoldAmount">
+            <summary>
+            Gram amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.PiyasaGramFiyat">
+            <summary>
+            public price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.KTGramFiyat">
+            <summary>
+            KT price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.SatisGramFiyat">
+            <summary>
+            Goldtag price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.AltinVerildi">
+            <summary>
+            True iff vendor bought mineral
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.KTReferansId">
+            <summary>
+            KT execution reference
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.Comments">
+            <summary>
+            Comments for admin panel
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.MuhasebeTL">
+            <summary>
+            Value for accounting TRY
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.FinalizedGold.MuhasebeGram">
+            <summary>
+            Value for accounting mineral gram
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.FinalizedGold.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.FinalizedGold.#ctor(Gold.Core.Vendors.ExpectedCash,System.Boolean,System.String,System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Creates new finalized transaction
+            </summary>
+            <param name="expectedCash">Expected cash</param>
+            <param name="altinVerildi">true or false</param>
+            <param name="ktReferans">kt ref id</param>
+            <param name="comments">comments for panel</param>
+            <param name="tl">total try</param>
+            <param name="gram">total grams</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.FinalizedGold.#ctor(System.Guid,System.Guid,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String,System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Creates new finalized transaction
+            </summary>
+            <param name="vendorId">vendor's id</param>
+            <param name="transId">transaction id</param>
+            <param name="refe">referans</param>
+            <param name="tlAmount">total try</param>
+            <param name="goldAmount">total grams</param>
+            <param name="pg">public price</param>
+            <param name="ktg">kt price</param>
+            <param name="stg">goldtag price</param>
+            <param name="ktRef">execution reference by kt</param>
+            <param name="comments">admin panel comments</param>
+            <param name="tl">accounting try</param>
+            <param name="gram">accoounting grams</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.Gcode">
+            <summary>
+            Represents a goldtag code
+            Some vendor actions requires valid gcode
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Gcode.GcodeId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Gcode.Code">
+            <summary>
+            Code value
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Gcode.Used">
+            <summary>
+            True iff code is used already
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Gcode.GeneratedFor">
+            <summary>
+            Vendor id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Gcode.GeneratedDateTime">
+            <summary>
+            Datetime code generated
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Gcode.ValidUntil">
+            <summary>
+            Datetime code is valid
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.Gcode.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.Gcode.#ctor(System.String,System.Guid)">
+            <summary>
+            Creates new gcode
+            </summary>
+            <param name="code">gcode</param>
+            <param name="generatedFor">vendor id</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.Gcode.ToString">
+            <summary>
+            String representation
+            </summary>
+            <returns>a string representation of this class</returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.InterBankError">
+            <summary>
+            Depreciated interbank error
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.IBanErrId">
+            <summary>
+            Db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.Amount">
+            <summary>
+            Amount of grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.ReceiverAccount">
+            <summary>
+            REceiver
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.ReceiverSuffix">
+            <summary>
+            Receiver suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.TransferType">
+            <summary>
+            Tramsfer type, should be 3
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.RefId">
+            <summary>
+            KT ref id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.DateTime">
+            <summary>
+            DateTime of error
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.Comments">
+            <summary>
+            Comments for admin panel
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.TransactionId">
+            <summary>
+            Related transactionm
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.InterBankError.VendorId">
+            <summary>
+            id of the vendor
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.InterBankError.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.InterBankError.#ctor(System.Guid,System.Guid,System.Decimal,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Creates new inter bank transfer error record
+            </summary>
+            <param name="transId">Transaction id</param>
+            <param name="vendorId">vendor id</param>
+            <param name="amount">amount of transaction</param>
+            <param name="recAcc">receiver account number</param>
+            <param name="suff">receiver suffix</param>
+            <param name="type">type of transaction</param>
+            <param name="refId">reference id of KT</param>
+            <param name="comments">comments for admin panel</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.NotPosGold">
+            <summary>
+            Depreciated
+            Represetns a transaction where position not closed yet
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.NotPosId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.RefId">
+            <summary>
+            KT ref id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.Amount">
+            <summary>
+            Amount of grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.SuffixFrom">
+            <summary>
+            From which suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.SuffixTo">
+            <summary>
+            To which suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.BuyRate">
+            <summary>
+            BuyRate tried during buy process
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.TransactionId">
+            <summary>
+            Related transactiomn id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.VendorId">
+            <summary>
+            Related Vendor id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.DateTime">
+            <summary>
+            DateTime of not position
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGold.Comments">
+            <summary>
+            Arbitrary comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.NotPosGold.#ctor">
+            <summary>
+            Private Constructor Required for EFCore Database framework
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.NotPosGold.#ctor(System.String,System.Decimal,System.String,System.String,System.Decimal,System.Guid,System.Guid,System.String)">
+            <summary>
+            Constructs new NotPosGold
+            </summary>
+            <param name="refId">kt ref</param>
+            <param name="amount">gram amount</param>
+            <param name="_from">From suffix</param>
+            <param name="_to">to suffix</param>
+            <param name="rate">buy rate</param>
+            <param name="tId">transaction id</param>
+            <param name="vid">vendor id</param>
+            <param name="comments">any useful comments</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.NotPosGoldSell">
+            <summary>
+            Depreciated not pos sell class
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.NotPosId">
+            <summary>
+            databse id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.RefId">
+            <summary>
+            kt ref id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.Amount">
+            <summary>
+            gram amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.SuffixFrom">
+            <summary>
+            sell precious metal suffix from 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.SuffixTo">
+            <summary>
+            sell previous metal seuffix to
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.SellRate">
+            <summary>
+            Sell rate
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.TransactionId">
+            <summary>
+            Transaction ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.VendorId">
+            <summary>
+            Vendor ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.DateTime">
+            <summary>
+            Datetime of non pos sell
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.NotPosGoldSell.Comments">
+            <summary>
+            Arbitrary comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.NotPosGoldSell.#ctor(System.String,System.Decimal,System.String,System.String,System.Decimal,System.Guid,System.Guid,System.String)">
+            <summary>
+            Creates new NotPosGoldSell
+            </summary>
+            <param name="refId">reference</param>
+            <param name="amount">grams</param>
+            <param name="_from">kt from suffiix</param>
+            <param name="_to">kt to suffix</param>
+            <param name="rate">sell rate</param>
+            <param name="tId">transaction</param>
+            <param name="vid">vendor</param>
+            <param name="comments">comments</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.UnexpectedCash">
+            <summary>
+            Depreciated unexpected cash class
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UnexpectedCash.UnExpectedId">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UnexpectedCash.TransactionId">
+            <summary>
+            transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UnexpectedCash.KTReference">
+            <summary>
+            kt reference
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UnexpectedCash.Suffix">
+            <summary>
+            suffix where money came in or not
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UnexpectedCash.Amount">
+            <summary>
+            grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UnexpectedCash.DateTime">
+            <summary>
+            datetime of the event
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.UnexpectedCash.#ctor(System.Guid,System.String,System.String,System.Decimal)">
+            <summary>
+            Creates new unexpected cash
+            </summary>
+            <param name="transId">transaction</param>
+            <param name="ktref">referebce</param>
+            <param name="suffix">suffix related</param>
+            <param name="amount">grams</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.UnexpectedCash.ToString">
+            <summary>
+            str repr
+            </summary>
+            <returns>str</returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.UsedFirstLast">
+            <summary>
+            Class in order to store used FirstLast keys 
+            for vendor automatic transactions
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UsedFirstLast.FirstLastId">
+            <summary>
+            Db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.UsedFirstLast.FirstLast">
+            <summary>
+            First last key
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.UsedFirstLast.#ctor(System.String)">
+            <summary>
+            Creates new first last entry
+            </summary>
+            <param name="firstLast"></param>
+        </member>
+        <member name="T:Gold.Core.Vendors.User5">
+            <summary>
+            Represents a User
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.UserId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.Role">
+            <summary>
+            Role of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.FirstName">
+            <summary>
+            First name (also middle name)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.FamilyName">
+            <summary>
+            Family name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.Email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.Phone">
+            <summary>
+            Mobile number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.Balance">
+            <summary>
+            GOLD balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.IBAN">
+            <summary>
+            IBAN of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.MemberId">
+            <summary>
+            Member id generated by goldtag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.Verified">
+            <summary>
+            If true user can be considered lvl 1 (old system)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.User5.BlockedGrams">
+            <summary>
+            Blocked gold grams
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.User5.ManipulateBalance(System.Decimal)">
+            <summary>
+            Changes the Balance of the user
+            </summary>
+            <param name="value">Can be either negtive or positive value</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.Vendor">
+            <summary>
+            Represents a 3rd party Vendor
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.VendorId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.Name">
+            <summary>
+            Common name of the vendor (for example Paycell)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.Email">
+            <summary>
+            Contact Email
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.Phone">
+            <summary>
+            Contact phone
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.ApiKey">
+            <summary>
+            Api key generated by Goldtag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.Secret">
+            <summary>
+            Secret firstly generated then can be changed by vendor
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.Balance">
+            <summary>
+            Vendor Gold Balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.Vendor.SilverBalance">
+            <summary>
+            Vendor silver balance, can be null
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.Vendor.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates new Vendor
+            </summary>
+            <param name="name">Name of vendor</param>
+            <param name="email">contact mail</param>
+            <param name="phone">contact phone</param>
+            <param name="apikey">first api key</param>
+            <param name="secret">first secret</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorCashPayment">
+            <summary>
+            Cash payment request for Gold/Silver sales
+            TO be handled by service automatically
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.PaymentId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.VendorId">
+            <summary>
+            Vendor id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.TransactionId">
+            <summary>
+            Transaction id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.VendorReferenceId">
+            <summary>
+            Vendor's reference 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.RateFxId">
+            <summary>
+            Exchange rate fxcode 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.GramAmount">
+            <summary>
+            Grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.TLAmount">
+            <summary>
+             Lira amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.PiyasaGramFiyat">
+            <summary>
+            public price 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.KTGramFiyat">
+            <summary>
+            kt price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.SatisGramFiyat">
+            <summary>
+            goldtag price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.DateTime">
+            <summary>
+            DateTime of the request
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorCashPayment.Comments">
+            <summary>
+            Explanatory comments
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorCashPayment.GetHashCode">
+            <summary>
+            Generates hashcode
+            </summary>
+            <returns>hashcode as int</returns>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorCashPayment.#ctor(System.Guid,System.Int32,System.String,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Creates new VendorCashPayment
+            </summary>
+            <param name="vendorId">the id of vendor</param>
+            <param name="transId">the transaction id</param>
+            <param name="referance">vendor ref id</param>
+            <param name="fxId">exchange rate id</param>
+            <param name="tl">total try</param>
+            <param name="grams">total grams</param>
+            <param name="piy">public price</param>
+            <param name="kt">kt price</param>
+            <param name="sat">sale price</param>
+            <param name="comments">useful comments</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorCashPayment.ToString">
+            <summary>
+            returns string representation
+            </summary>
+            <returns>string representation of CashPayment</returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorConfirmation">
+            <summary>
+            Depreciated confirmation record
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorConfirmation.ConfirmationId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorConfirmation.TransactionId">
+            <summary>
+            trans id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorConfirmation.ConfirmedByAdmin">
+            <summary>
+            true iff goldtag confirms transaction
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorConfirmation.#ctor(System.Guid)">
+            <summary>
+            creates new confirmation
+            </summary>
+            <param name="transId">related transaction</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorConfirmationNew">
+            <summary>
+            confirmation record
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorConfirmationNew.ConfirmationId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorConfirmationNew.TransactionId">
+            <summary>
+            trans id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorConfirmationNew.ConfirmedByAdmin">
+            <summary>
+            true iff goldtag confirms transaction
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorConfirmationNew.#ctor(System.Int32)">
+            <summary>
+            creates new confirmation
+            </summary>
+            <param name="transId">related transaction</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorData">
+            <summary>
+            Stores data related to a vendor
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.VendorDataId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.RelatedId">
+            <summary>
+            generally vendor id
+            type string for flexibility
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.TLSuffix">
+            <summary>
+            Vendor fintag account TL suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.GOLDSuffix">
+            <summary>
+            Vendor gold siffox
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.SLVSuffix">
+            <summary>
+            Vendor silver suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.AccountNumber">
+            <summary>
+            Vendor account number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.AccountSuffix">
+            <summary>
+            Vendor account suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.Automatic">
+            <summary>
+            Automatic true iff vendor should be auto
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorData.VendorHavaleCode">
+            <summary>
+            depreciated column
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorData.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            creates new vendor data
+            </summary>
+            <param name="rel">vendor id</param>
+            <param name="tl">tl suffix</param>
+            <param name="gld">gld suffix</param>
+            <param name="slv">silver suffix</param>
+            <param name="num">account number</param>
+            <param name="suff">account suffix</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorData.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            creates new vendor data with hcode
+            depreciated
+            </summary>
+            <param name="rel">vendor id</param>
+            <param name="tl">tl suffix</param>
+            <param name="gld">gld suffix</param>
+            <param name="slv">silver suffix</param>
+            <param name="num">account number</param>
+            <param name="suff">account suffix</param>
+            <param name="hCode">havale code</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorData.UpdateAccounts(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Updates vendor date
+            </summary>
+            <param name="tl">tl suffix</param>
+            <param name="gld">gld suffix</param>
+            <param name="slv">silver suffix</param>
+            <param name="num">account number</param>
+            <param name="suff">account suffix</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorData.UpdateAccounts(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Updates vendor date
+            </summary>
+            <param name="tl">tl suffix</param>
+            <param name="gld">gld suffix</param>
+            <param name="slv">silver suffix</param>
+            <param name="num">account number</param>
+            <param name="suff">account suffix</param>
+            <param name="hcode">havale code</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorExpected">
+            <summary>
+            A task for expected service
+            where automatic buy process occurs
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.ExpectedId">
+            <summary>
+            DB id if venexpected added to db during server shutdown
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.VendorId">
+            <summary>
+            vendor's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.TransactionId">
+            <summary>
+            tranasction id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.VendorReferenceId">
+            <summary>
+            vendor's reference
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.ExpectedSuffix">
+            <summary>
+            suffix whre money is expected
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.ExpectedTRY">
+            <summary>
+             expected lira amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.RateFxId">
+            <summary>
+            exchange rate id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.Amount">
+            <summary>
+            grams amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.PiyasaGramFiyat">
+            <summary>
+            public price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.KTGramFiyat">
+            <summary>
+            kt price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.SatisGramFiyat">
+            <summary>
+            goldtag price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorExpected.DateTime">
+            <summary>
+            datetime of the entity creation
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorExpected.GetHashCode">
+            <summary>
+            Generates Hashcode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorExpected.#ctor(System.Guid,System.Int32,System.String,System.String,System.Int32,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates new VendorExpected
+            </summary>
+            <param name="vendorId">Vendor id</param>
+            <param name="transId">Transaction id</param>
+            <param name="referance">vendor reference id</param>
+            <param name="suffix">expected suffix</param>
+            <param name="fxId">exchange rate id</param>
+            <param name="tl">expected try</param>
+            <param name="grams">grams of transaction</param>
+            <param name="piy">public price for 1g</param>
+            <param name="kt">lt price for 1g</param>
+            <param name="sat">fintag price for 1g</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorExpected.ToString">
+            <summary>
+            String representation of this class
+            </summary>
+            <returns>a string</returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorFinalized">
+            <summary>
+            Stores information related to finalized transactions
+            where gold is transferred physically and money is exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.FinalizedId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.VendorId">
+            <summary>
+            vendor's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.TransactionId">
+            <summary>
+            tranasction id // changed to count
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.VendorReferenceId">
+            <summary>
+            vendor's reference
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.DateTime">
+            <summary>
+            finalization datetime
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.TLAmount">
+            <summary>
+            total lira amount exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.GoldAmount">
+            <summary>
+            total gold or silver or platin amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.PiyasaGramFiyat">
+            <summary>
+            average price for one or many expected/ payment
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.KTGramFiyat">
+            <summary>
+            kt price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.SatisGramFiyat">
+            <summary>
+            average goldtag price for one or many expected/payment
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.MadenType">
+            <summary>
+            Gold silver or platin
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.KTReferansId">
+            <summary>
+            KT execution reference
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.Comments">
+            <summary>
+            Useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.MuhasebeTL">
+            <summary>
+            TL income or expense 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.MuhasebeGram">
+            <summary>
+            Grams income or expense
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorFinalized.FinalKar">
+            <summary>
+            Final profit from the transactions
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorFinalized.#ctor(Gold.Core.Vendors.VendorExpected,System.String,System.String,System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Creates new finalized transaction
+            </summary>
+            <param name="expectedCash">Expected cash object</param>
+            <param name="madenType">type of transaction </param>
+            <param name="ktReferans">kt reference</param>
+            <param name="comments">useful comments</param>
+            <param name="tl">total try of transactions</param>
+            <param name="gram">total grams of transactions</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorFinalized.#ctor(System.Guid,System.Int32,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.String,System.String,System.String,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Creates new finalized transaction 
+            </summary>
+            <param name="vendorId">vendor id</param>
+            <param name="transId">transactions count</param>
+            <param name="vendorRefId">first last transaction id</param>
+            <param name="tlAmount">total try</param>
+            <param name="gramAmount">total grams</param>
+            <param name="pgf">public price for 1g</param>
+            <param name="kgf">lt price for 1g</param>
+            <param name="sgf">fintag price for 1g</param>
+            <param name="madenType">type of mineral</param>
+            <param name="ktRef">kt execution id</param>
+            <param name="comm">useful comments</param>
+            <param name="mTl">for accounting minus or plus try</param>
+            <param name="mGr">for accounting minus or plus grams</param>
+            <param name="finalKar">final profit if any</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorNotPosition">
+            <summary>
+            Represetns a transaction where position not closed yet (BUY)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.NotPosId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.RefId">
+            <summary>
+            first___last transaction ids
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.Amount">
+            <summary>
+            total amount of gold or silver or platin
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.SuffixFrom">
+            <summary>
+            goldtag suffix for vendor
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.SuffixTo">
+            <summary>
+            goldtag suffix for vendor
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.BuyRate">
+            <summary>
+            buy rate of the mineral
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.TransactionId">
+            <summary>
+            transactions count
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.VendorId">
+            <summary>
+            related vendor
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.DateTime">
+            <summary>
+            datetime of the transactions
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.Comments">
+            <summary>
+            useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.PiyasaGramFiyat">
+            <summary>
+            average public price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.KTGramFiyat">
+            <summary>
+            kt price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPosition.SatisGramFiyat">
+            <summary>
+            average goldtag price for 1g
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorNotPosition.#ctor(System.String,System.Decimal,System.String,System.String,System.Decimal,System.Int32,System.Guid,System.String,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            creates new not pos
+            </summary>
+            <param name="refId">first_last ids</param>
+            <param name="amount">total grams</param>
+            <param name="_from">from suffix</param>
+            <param name="_to">to suffix</param>
+            <param name="rate">buy rate</param>
+            <param name="tId">transactions count</param>
+            <param name="vid">vendor id</param>
+            <param name="comments">useful comments</param>
+            <param name="pgf">public price</param>
+            <param name="kgf">kt price</param>
+            <param name="sgf">goldtag price</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorNotPositionSell">
+            <summary>
+            Represetns a transaction where position not closed yet (SELL)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.NotPosId">
+            <summary>
+            DB ID
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.RefId">
+            <summary>
+            first___last transaction ids
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.TlAmount">
+            <summary>
+            total try to be sent
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.GramAmount">
+            <summary>
+            total grams
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.Suffix">
+            <summary>
+            accoutn suffix
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.Account">
+            <summary>
+            account number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.SellRate">
+            <summary>
+            kt sell rate
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.TransactionId">
+            <summary>
+            transactions count
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.VendorId">
+            <summary>
+            related vendor's id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.DateTime">
+            <summary>
+            datetime of the transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.Comments">
+            <summary>
+            useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.PiyasaGramFiyat">
+            <summary>
+            avg public price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.KTGramFiyat">
+            <summary>
+            kt price for 1g
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorNotPositionSell.SatisGramFiyat">
+            <summary>
+            avg fintag price for 1g
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorNotPositionSell.#ctor(System.String,System.Decimal,System.Decimal,System.String,System.String,System.Decimal,System.Int32,System.Guid,System.String,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            creates new not pos
+            </summary>
+            <param name="refId">first last id</param>
+            <param name="tlamount">total try</param>
+            <param name="gamount">grams</param>
+            <param name="suff">vendor's desired suffix</param>
+            <param name="acc">vendor kt account number</param>
+            <param name="rate">sell rate</param>
+            <param name="tId">transactions count</param>
+            <param name="vid">vendor id</param>
+            <param name="comments">useful comments</param>
+            <param name="pgf">public price</param>
+            <param name="kgf">kt price</param>
+            <param name="sgf">goldtag price</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorPlatinBalance">
+            <summary>
+            Stores vendor's platin balance
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorPlatinBalance.VendorId">
+            <summary>
+            vendor id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorPlatinBalance.Balance">
+            <summary>
+            balance
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorPlatinBalance.#ctor(System.Guid)">
+            <summary>
+            creates new platin balance
+            </summary>
+            <param name="vendorId">which vendor</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorTransaction">
+            <summary>
+            Depreciated vendor transaction class
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.TransactionId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.VendorReferenceId">
+            <summary>
+            given by vendor 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.Source">
+            <summary>
+            source of transaction (who is selling gold or silver or..)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.Destination">
+            <summary>
+            destination of transaction (who is buying gold or silver or ..)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.ConfirmedByVendor">
+            <summary>
+            true iff vendor confirms
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.ConfirmedByGoldtag">
+            <summary>
+            true if vendor confirms and no error
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.TransactionDateTime">
+            <summary>
+            date time of transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.VendorConfirmedDateTime">
+            <summary>
+            datetime when vendor confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.GoldtagConfirmedDateTime">
+            <summary>
+            datetime when goldtag confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.TransactionFinalisedDateTime">
+            <summary>
+            datetime when transaction finalized
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.Cancelled">
+            <summary>
+            true iff transaciton cancelled
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.Succesful">
+            <summary>
+            true iff transaction success
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.GramAmount">
+            <summary>
+            grams to be exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.TlAmount">
+            <summary>
+            tl price of the grams exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.Comment">
+            <summary>
+            useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransaction.IdNumber">
+            <summary>
+            depreciated
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Vendors.VendorTransaction.ArcDate">
+            <summary>
+            for random seed
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.InitiateTheDayOrFirstStart">
+            <summary>
+            depreciated
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.GetId">
+            <summary>
+            depreciated
+            creates unique id
+            </summary>
+            <returns>returns guid</returns>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.#ctor(System.String,System.Guid,System.Guid,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            depreciated
+            creates new transaction
+            </summary>
+            <param name="refId">reference</param>
+            <param name="source">source</param>
+            <param name="dest">dest</param>
+            <param name="grams">grams</param>
+            <param name="price">price</param>
+            <param name="comment">comment</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.VendorConfirmed">
+            <summary>
+            vendor confirms
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.GTagConfirmed">
+            <summary>
+            goldtag confirms
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.CancelTransaction(System.String)">
+            <summary>
+            cancel the transaction
+            </summary>
+            <param name="reason">what is the reason</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransaction.CompleteTransaction(System.String)">
+            <summary>
+            completes transaction
+            </summary>
+            <param name="message">useful comment</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorTransactionNew">
+            <summary>
+            Depreciated vendor transaction class
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.TransactionId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.VendorReferenceId">
+            <summary>
+            given by vendor 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.Source">
+            <summary>
+            source of transaction (who is selling gold or silver or..)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.Destination">
+            <summary>
+            destination of transaction (who is buying gold or silver or ..)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.ConfirmedByVendor">
+            <summary>
+            true iff vendor confirms
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.ConfirmedByGoldtag">
+            <summary>
+            true if vendor confirms and no error
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.TransactionDateTime">
+            <summary>
+            date time of transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.VendorConfirmedDateTime">
+            <summary>
+            datetime when vendor confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.GoldtagConfirmedDateTime">
+            <summary>
+            datetime when goldtag confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.TransactionFinalisedDateTime">
+            <summary>
+            datetime when transaction finalized
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.Cancelled">
+            <summary>
+            true iff transaciton cancelled
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.Succesful">
+            <summary>
+            true iff transaction success
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.GramAmount">
+            <summary>
+            grams to be exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.TlAmount">
+            <summary>
+            tl price of the grams exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.Comment">
+            <summary>
+            useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorTransactionNew.IdNumber">
+            <summary>
+            depreciated
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Vendors.VendorTransactionNew.ArcDate">
+            <summary>
+            for random seed
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.InitiateTheDayOrFirstStart">
+            <summary>
+            inititates id counter
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.GetId">
+            <summary>
+            returns new id
+            </summary>
+            <returns>id value</returns>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.#ctor(System.String,System.Guid,System.Guid,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            depreciated
+            creates new vendor trans
+            </summary>
+            <param name="refId">refId</param>
+            <param name="source">source</param>
+            <param name="dest">dest</param>
+            <param name="grams">grams</param>
+            <param name="price">price</param>
+            <param name="comment">comment</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.VendorConfirmed">
+            <summary>
+            vendor confirms
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.GTagConfirmed">
+            <summary>
+            goldtag confirms
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.CancelTransaction(System.String)">
+            <summary>
+            cancel the transaction
+            </summary>
+            <param name="reason">what is the reason</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorTransactionNew.CompleteTransaction(System.String)">
+            <summary>
+            completes transaction
+            </summary>
+            <param name="message">useful comment</param>
+        </member>
+        <member name="T:Gold.Core.Vendors.VendorUnExpected">
+            <summary>
+            Represents a situation where either expected cash timed out
+            or expected cash did not completed as intended
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.UnExpectedId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.TransactionId">
+            <summary>
+            transactions count
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.KTReference">
+            <summary>
+            last kt execution id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.Suffix">
+            <summary>
+            suffix where money received or was expected to receive
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.Amount">
+            <summary>
+            total transactions grams 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.DateTime">
+            <summary>
+            date time when this entity created
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.Comment">
+            <summary>
+            useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.ExpectedTRY">
+            <summary>
+            expected lira amount
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.ReceivedTRY">
+            <summary>
+            received lira amount if any
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VendorUnExpected.DifferenceSEconds">
+            <summary>
+            time difference if timed out
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorUnExpected.#ctor(System.Int32,System.String,System.String,System.Decimal,System.String,System.Decimal,System.Nullable{System.Decimal},System.Nullable{System.Int32})">
+            <summary>
+            
+            </summary>
+            <param name="transId">transId</param>
+            <param name="ktref">kt ref</param>
+            <param name="suffix">expected suffix</param>
+            <param name="amount">total grams</param>
+            <param name="comm">useful comments</param>
+            <param name="expectedTry">expected lira</param>
+            <param name="received">received lira if any</param>
+            <param name="diff">time difference if any</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VendorUnExpected.ToString">
+            <summary>
+            string representaion
+            </summary>
+            <returns>string rep</returns>
+        </member>
+        <member name="T:Gold.Core.Vendors.VenTransaction">
+            <summary>
+            Latest vendor transaction class
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.TransactionId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.VendorReferenceId">
+            <summary>
+            given by vendor 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.Source">
+            <summary>
+            source of transaction (who is selling gold or silver or..)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.Destination">
+            <summary>
+            destination of transaction (who is buying gold or silver or ..)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.ConfirmedByVendor">
+            <summary>
+            true iff vendor confirms
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.ConfirmedByGoldtag">
+            <summary>
+            true if vendor confirms and no error
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.TransactionDateTime">
+            <summary>
+            date time of transaction
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.VendorConfirmedDateTime">
+            <summary>
+            datetime when vendor confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.GoldtagConfirmedDateTime">
+            <summary>
+            datetime when goldtag confirmed
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.TransactionFinalisedDateTime">
+            <summary>
+            datetime when transaction finalized
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.Cancelled">
+            <summary>
+            true iff transaciton cancelled
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.Succesful">
+            <summary>
+            true iff transaction success
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.GramAmount">
+            <summary>
+            grams to be exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.TlAmount">
+            <summary>
+            tl price of the grams exchanged
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.Comment">
+            <summary>
+            useful comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.Kur">
+            <summary>
+            1g rate 
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.GercekKur">
+            <summary>
+            1g rate during finaliztion
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.TamamlanmisKTreferans">
+            <summary>
+            kt execution ref if any
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.ExtraBilgi">
+            <summary>
+            arbitrary comments
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Vendors.VenTransaction.IdNumber">
+            <summary>
+            if number of transaction
+            </summary>
+        </member>
+        <member name="F:Gold.Core.Vendors.VenTransaction.ArcDate">
+            <summary>
+            for generation random seed
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.InitiateTheDayOrFirstStart">
+            <summary>
+            deprecetiated
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.GetId">
+            <summary>
+            depreciated
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.#ctor(System.String,System.Guid,System.Guid,System.Decimal,System.Decimal,System.String,System.Decimal)">
+            <summary>
+            creates new ven trans
+            </summary>
+            <param name="refId">ref</param>
+            <param name="source">source</param>
+            <param name="dest">dest</param>
+            <param name="grams">grams</param>
+            <param name="price">price</param>
+            <param name="comment">comment</param>
+            <param name="kur">kur</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.VendorConfirmed">
+            <summary>
+            vendor confirms
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.GTagConfirmed">
+            <summary>
+            goldtag confirms
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.CancelTransaction(System.String)">
+            <summary>
+            cancel the transaction
+            </summary>
+            <param name="reason">what is the reason</param>
+        </member>
+        <member name="M:Gold.Core.Vendors.VenTransaction.CompleteTransaction(System.String)">
+            <summary>
+            completes transaction
+            </summary>
+            <param name="message">useful comment</param>
+        </member>
+        <member name="T:Gold.Core.Version2.Maden">
+            <summary>
+            represents a mineral type (gold / silver ...)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.MadenId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.Name">
+            <summary>
+            common name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.KtBuyRate">
+            <summary>
+            kt buy price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.KtSellRate">
+            <summary>
+            kt sell price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.ManuelBuyRate">
+            <summary>
+            goldtag buy price manually entered
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.ManuelSellRate">
+            <summary>
+            goldtag sell price
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.KtFxId">
+            <summary>
+            kt exchange rate fx id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.Maden.UseKtPrice">
+            <summary>
+            if true then system should use kt price
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Version2.Maden.#ctor(System.String,System.Int32)">
+            <summary>
+            creates new maden
+            </summary>
+            <param name="name">name of maden</param>
+            <param name="fdxId">kt fx id</param>
+        </member>
+        <member name="T:Gold.Core.Version2.RegisteredUser">
+            <summary>
+            represents a goldtag user who is finalized registration process
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.UserId">
+            <summary>
+            DB id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.FirstName">
+            <summary>
+            First name (also middle name)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.FamilyName">
+            <summary>
+            Family name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.Birthdate">
+            <summary>
+            Date of birth
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.Email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.Phone">
+            <summary>
+            Mobile number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.MemberId">
+            <summary>
+            Member id generated by goldtag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.Banned">
+            <summary>
+            If true then user  is banned
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.AdminNotes">
+            <summary>
+            Special comments by admins (to be used for banning etc.)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.DateRegistered">
+            <summary>
+            User register time and date
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.DateVerified">
+            <summary>
+            User verified time and date
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.RegisteredUser.UserLevel">
+            <summary>
+            membership level
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Version2.RegisteredUser.#ctor(Gold.Core.Version2.UserRegistration)">
+            <summary>
+            Creates new registered user from registering user
+            </summary>
+            <param name="user">user</param>
+        </member>
+        <member name="M:Gold.Core.Version2.RegisteredUser.#ctor(Gold.Core.Users.User)">
+            <summary>
+            creates new registered user from version 1 user
+            </summary>
+            <param name="user">user</param>
+        </member>
+        <member name="M:Gold.Core.Version2.RegisteredUser.PermanentlyBanUser(System.String)">
+            <summary>
+            bans the user with reason
+            </summary>
+            <param name="reason">ban reason</param>
+        </member>
+        <member name="M:Gold.Core.Version2.RegisteredUser.LiftUserBan(System.String)">
+            <summary>
+            lifts ban
+            </summary>
+            <param name="reason">lift reason</param>
+        </member>
+        <member name="T:Gold.Core.Version2.UserRegistration">
+            <summary>
+            represents a registration attempt for membership
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.UserId">
+            <summary>
+            db id
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.FirstName">
+            <summary>
+            First name (also middle name)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.FamilyName">
+            <summary>
+            Family name
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.Birthdate">
+            <summary>
+            Date of birth
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.Email">
+            <summary>
+            Email address
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.Phone">
+            <summary>
+            Mobile number
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.MemberId">
+            <summary>
+            Member id generated by goldtag
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.Banned">
+            <summary>
+            If true then user must complete SmS validation
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.AdminNotes">
+            <summary>
+            Special comments by admins (to be used for banning etc.)
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.DateCreated">
+            <summary>
+            User register time and date
+            </summary>
+        </member>
+        <member name="P:Gold.Core.Version2.UserRegistration.VerificationCode">
+            <summary>
+            sms verify code
+            </summary>
+        </member>
+        <member name="M:Gold.Core.Version2.UserRegistration.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            creates new registration attempt
+            </summary>
+            <param name="memberId">id</param>
+            <param name="firstName">first name</param>
+            <param name="familyName">sirname</param>
+            <param name="pass">password</param>
+            <param name="phone">mobile num</param>
+            <param name="birthDate">date of birth</param>
+            <param name="code">verify code</param>
+        </member>
+        <member name="M:Gold.Core.Version2.UserRegistration.PermanentlyBanUser(System.String)">
+            <summary>
+            bans the user
+            </summary>
+            <param name="reason">with reason</param>
+        </member>
+        <member name="M:Gold.Core.Version2.UserRegistration.LiftUserBan(System.String)">
+            <summary>
+            lifts ban
+            </summary>
+            <param name="reason">lift reason</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OFgAiRbSh4k=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\arc_i\\OneDrive\\Desktop\\visualstudio - dev\\Gold.Core\\Gold.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arc_i\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\arc_i\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\arc_i\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

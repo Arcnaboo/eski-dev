@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [apiuser]
+    WITH PASSWORD = N'yeGhez,o!p9vQ|@|NxivsnXemsFT7_&#$!~<l|yDw.`aV{is', SID = 0x64925D9CEB95234F9D6642083C2187B7, DEFAULT_DATABASE = [GoldDev], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

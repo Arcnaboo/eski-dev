@@ -1,0 +1,1167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gold.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Gold.Api.Controllers.CallbackController">
+            <summary>
+            Callback Controller
+            Purpose is to become bridge between Admin panel and App
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Gold.Api.Controllers.CallbackController.Repository" -->
+        <member name="M:Gold.Api.Controllers.CallbackController.#ctor(Gold.Domain.Users.Interfaces.IUsersRepository,Gold.Domain.Vendors.IVendorsRepository)">
+            <summary>
+            Creates new Callback Controller
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AccStatus">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AllGoldSalesCount">
+            <summary>
+            API endpoint, HTTP GET route all_gold_sales_count
+            Returns the count of all gold sales
+            </summary>
+            <returns>integer - all gold sales count</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AllGoldSales(System.Int32,System.Int32)">
+            <summary>
+            Returns All gold sales as List of Transactions
+            Musteri id, TCK, datetime, nereden, nereye, altin, komisyonlu, baz, komisyon
+            </summary>
+            <param name="limit">How much data per page</param>
+            <param name="page">which page to be returned</param>
+            <returns>List of Transactions</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AllGoldSalesTodayCount">
+            <summary>
+            Returns the count of all gold sales thats made today
+            </summary>
+            <returns>integer - all gold sales today count</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AllGoldSalesToday(System.Int32,System.Int32)">
+            <summary>
+            Returns All gold sales today as List of Transactions
+            </summary>
+            <param name="limit">How much data per page</param>
+            <param name="page">which page to be returned</param>
+            <returns>List of Transactions</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AllGoldSalesVposCount">
+            <summary>
+            Returns the count of all gold sales thats made with credit card
+            </summary>
+            <returns>integer - all gold sales by credit card count</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.CallbackController.AllGoldSalesVpos(System.Int32,System.Int32)">
+            <summary>
+            Returns All gold sales today as List of Transactions
+            </summary>
+            <param name="limit">How much data per page</param>
+            <param name="page">which page to be returned</param>
+            <returns>List of Transactions</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GetUsersEvents(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.CalculatePrice(System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="grams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GetModels(System.Collections.Generic.List{Gold.Core.Events.Transaction2})">
+            <summary>
+            
+            </summary>
+            <param name="transactions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GetEventOrWedding(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GetEvent(System.Int32,System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="search"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GetAllWeddings(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="limit"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.WeddingsCount">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.EventsCount">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GetAllEvents(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="limit"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.GoldDayUsersStatus(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.UserResponseGoldDay(Gold.Api.Models.Events.UserResponseGoldDayParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.AddUserToGoldDay(Gold.Api.Models.Events.AddUserToGoldDayParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.CreateGoldDay(Gold.Api.Models.Events.CreateGoldDayParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.DeleteEvent(Gold.Api.Models.Events.DeleteEventParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.EditEvent(Gold.Api.Models.Events.EditEventParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.CreateWedding(Gold.Api.Models.Events.CreateWeddingParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.CreateEvent(Gold.Api.Models.Events.CreateSpecialEventParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.EventsController.UploadPhoto(System.Guid,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            profil resmi upload et
+            </summary>
+            <param name="id"></param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.KuwaitApiController.GetAtmList(System.String)">
+            <summary>
+            Not Completed
+            </summary>
+            <param name="cityName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.KuwaitApiController.GetGoldPrices">
+            <summary>
+            Completed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.KuwaitApiController.ValidateIban(Gold.Api.Models.KuwaitTurk.Api.IbanValidateParametersModel)">
+            <summary>
+            Completed
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetYekun(Gold.Core.Transactions.User3)">
+            <summary>
+            Yekun hesaplar
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractSourceUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak bir Usersa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractSourceFintag(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak Fintagsa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractSourceWedding(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak Düğünse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractSourceEvent(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak Etkinlikse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractSourceUnregisteredUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak kayıtsız kullanıcıysa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractSource(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Usersa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationVirtualPos(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak KrediKartısa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationWedding(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Düğünse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationEvent(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Etkinlikse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationGoldDayUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Altıngünüyse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationCharity(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Bağışsa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestinationIBAN(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak EFT ise kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ExtractDestination(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ParseTransactionAsModel(Gold.Core.Transactions.Transaction,System.Int32,System.String)">
+            <summary>
+            Verilen hareketi Modele çevirir
+            </summary>
+            <param name="transaction">Hareket</param>
+            <param name="key">Front end için anahtar</param>
+            <param name="idKim">id nin kimle alakalı olduğu</param>
+            <returns>Hareket Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetBankTransferRequestsCount">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetBankTransferRequests(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="limit"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.RequestsWithIdCount(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetTransferRequestsWithId(System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="limit"></param>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransactionsWithIdCount(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetTransactionsWithId(System.String,System.Int32,System.Int32)">
+            <summary>
+            Verilen ID ye göre alakalı bütün hareketleri listeler
+            </summary>
+            <param name="id">UserId yada EventId </param>
+            <returns>Hareketler Listesi</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.UserTransactions(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ParseEftUnconfirmedAsModel(Gold.Core.Transactions.Transaction,System.Int32)">
+                     *  var transaction = new Transaction("TRY",
+                                model.UserId, 
+                                "User", 
+                                model.BankId, 
+                                "IBAN",
+                                transPrice, 
+                                randString,
+                                false,
+                                gram,
+                                priceWithout);
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ListUserTransactionsByDate(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransferRequestsCount(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetTransferRequests(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="limit"></param>
+            <param name="page"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransactionsRecordsCount(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetTransactionRecords(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="limit"></param>
+            <param name="page"></param>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetBanks">
+            <summary>
+            Sistemdeki Banka Bilgilerini Listeler
+            </summary>
+            <returns>Sistemdeli banka bilgi listesi</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetBankRequest(System.String)">
+            <summary>
+            Banka eft ile altın alma talebinin bildirimlerden çeker
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.SellGoldEftResponse(Gold.Api.Models.Transactions.SellGoldEftResponseParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.SellGoldEft(Gold.Api.Models.Transactions.SellGoldEftParamModel)">
+            <summary>
+            Eft ıle altın satma ıstegı baslatır
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.SellSilverEft(Gold.Api.Models.Transactions.SellGoldEftParamModel)">
+            <summary>
+            Eft ıle altın satma ıstegı baslatır
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.BuySilverEftResponse(Gold.Api.Models.Transactions.BuyGoldEftResponseParamModel)">
+            <summary>
+            Silver satin alma istegi ne cevap verme
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.BuyGoldEftResponse(Gold.Api.Models.Transactions.BuyGoldEftResponseParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.BuySilverEft(Gold.Api.Models.Transactions.BuyGoldEftParamModel)">
+            <summary>
+            EFT Havale ile Altın alma işlemi
+            </summary>
+            <param name="model">Altın Alma EFT Modeli</param>
+            <returns>Altın Alma Sonuç Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.BuyGoldEft(Gold.Api.Models.Transactions.BuyGoldEftParamModel)">
+            <summary>
+            EFT Havale ile Altın alma işlemi
+            </summary>
+            <param name="model">Altın Alma EFT Modeli</param>
+            <returns>Altın Alma Sonuç Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetGoldRequest(System.String)">
+            <summary>
+            Baska kullanıcıdan altın talebini istenen kullanıcıya çekme
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.RequestGoldFromAnotherUser(Gold.Api.Models.Transactions.RequestGoldParamModel)">
+            <summary>
+            Baska kullanıcıdan altın talebi
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.BuySilverCC(Gold.Api.Models.Transactions.BuyCCparams)">
+            <summary>
+            Kullanıcı Altın almaö vpos ile
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.BuyGoldCC(Gold.Api.Models.Transactions.BuyCCparams)">
+            <summary>
+            Kullanıcı Altın almaö vpos ile
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.ConvertModelForUser(Gold.Core.Transactions.TransferRequest,System.String)">
+            <summary>
+            Kredi Kartı ile altın alma işlemi
+            </summary>
+            <param name="model">İşlem için gerekli bilgi modeli</param>
+            <returns>İşlem için gerekli formun web adresi string olarak</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.SilverTransferRequestResponse(Gold.Api.Models.Transactions.TransferRequestResponseParamModel)">
+            <summary>
+            İşlem onaylama, hehangi bir transfer bu method la onaylanır
+            </summary>
+            <param name="model">İşlem bilgi modeli</param>
+            <returns>İşlem Sonucu</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransferRequestResponse(Gold.Api.Models.Transactions.TransferRequestResponseParamModel)">
+            <summary>
+            İşlem onaylama, hehangi bir transfer bu method la onaylanır
+            </summary>
+            <param name="model">İşlem bilgi modeli</param>
+            <returns>İşlem Sonucu</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransferGoldFromUserToUser(Gold.Api.Models.Transactions.TransferFromUserToUserParamModel)">
+            <summary>
+            Kullanıcıdan kullanıcıya altın transferi için kullanılır
+            </summary>
+            <param name="model">İşlem için gerekli bilgi modeli</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransferSilverFromUserToUser(Gold.Api.Models.Transactions.TransferFromUserToUserParamModel)">
+            <summary>
+            Kullanıcıdan kullanıcıya altın transferi için kullanılır
+            </summary>
+            <param name="model">İşlem için gerekli bilgi modeli</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransferGoldFromUserToWedding(Gold.Api.Models.Transactions.TransferFromUserToWeddingParamModel)">
+            <summary>
+            Kullanıcıdan düğüne altın transfer işlemi
+            </summary>
+            <param name="model">işlem için gerekli bilgi modeli</param>
+            <returns>İşlem sonucu</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.TransferGoldFromUserToEvent(Gold.Api.Models.Transactions.TransferFromUserToEventParamModel)">
+            <summary>
+            Kullanıcıdan özel etkinliğe transfer işlemi
+            </summary>
+            <param name="model">işlem için gerekli bilgi modeli</param>
+            <returns>işlem sonucu</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.TransactionsController.GetCurrentPriceCheck(Gold.Api.Models.Transactions.PriceCheckParamModel)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.GetuserLogs(System.String)">
+            <summary>
+            Returns List of Users Logs 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.GetUsers(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String)">
+            <summary>
+            bütün userları liste olarak ceker
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.GetModels(System.Collections.Generic.List{Gold.Core.Events.Transaction2})">
+            <summary>
+            
+            </summary>
+            <param name="transactions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.GetUserEvents(Gold.Core.Users.User)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractSourceUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak bir Usersa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractSourceFintag(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak Fintagsa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractSourceWedding(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak Düğünse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractSourceEvent(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak Etkinlikse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractSourceUnregisteredUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            Kaynak kayıtsız kullanıcıysa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractSource(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Hareketin kaynağını User Modele çevirir
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationUser(Gold.Core.Transactions.Transaction)">
+            asdsad
+            
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Usersa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationVirtualPos(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak KrediKartısa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationWedding(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Düğünse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationEvent(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Etkinlikse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationGoldDayUser(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Altıngünüyse kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationCharity(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak Bağışsa kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestinationIBAN(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            Kaynak EFT ise kullanılır
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ExtractDestination(Gold.Core.Transactions.Transaction)">
+            <summary>
+            Harekette ki işlem sonucu altın yada para alanı User Modele çevirir
+            </summary>
+            <param name="transaction">Hareket objesi</param>
+            <returns>User Modeli</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.GetUserModel(System.String)">
+            <summary>
+            Bir kullanıcıyı ceker member id yada userid yeterli
+            </summary>
+            <param name="memberIdorUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.GetUserNotifications(System.String)">
+            <summary>
+            bildirimler
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.SeeNotification(System.String)">
+            <summary>
+            okundu bildirim
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.DeleteNotification(System.String)">
+            <summary>
+            bildirim sil
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.DeleteNotifications(Gold.Api.Models.Users.DelNotificationsParamModel)">
+            <summary>
+            delete multiple notifixations
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.SignUp(Gold.Api.Models.Users.CreateUserModel)">
+            <summary>
+            kayıt olma
+            </summary>
+            <param name="model"></param>
+            <returns>Create User result model</returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ForgotPasswordNewPassword(System.String,System.String)">
+            <summary>
+            şifremi unuttum code onay
+            </summary>
+            <param name="code"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.ForgotPassword(System.String)">
+            <summary>
+            şifremi unuttum başlangıç
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.EditProfile(Gold.Api.Models.Users.EditProfileParamModel)">
+            <summary>
+            profil editle
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.UploadPhoto(System.Guid,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            profil resmi upload et
+            </summary>
+            <param name="id"></param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.LogoutUser(Gold.Api.Models.Users.LogoutUserModel)">
+            <summary>
+            kullanıcı logout etme
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.LoginAdminUser(Gold.Api.Models.Users.LoginUserModel)">
+            <summary>
+            kullanıcı giriş yap
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.UsersController.LoginUser(Gold.Api.Models.Users.LoginUserModel)">
+            <summary>
+            kullanıcı giriş yap
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.VendorsController.GetExpecteds(System.Int32)">
+            <summary>
+            depreciated
+            </summary>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.VendorsController.TransactionsCount(Gold.Api.Models.Vendors.VendorRequestTransactionsCountParams)">
+            <summary>
+            CLOSED
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Controllers.VendorsController.GetVendorTransactions(Gold.Api.Models.Vendors.VendorRequestTransactionsParams)">
+            <summary>
+            CLOSED
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gold.Api.GoldDayApp.GoldDayGame">
+            <summary>
+            ALTIN GUNU OYUNU
+            
+            OYUN DATA DOSYASI FORMATI
+            ********
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.KuwaitTurk.Api.IbanValidateResultModel.Value">
+            {"value":{"IsValid":true,"ValidationMessage":""},"success":true,"results":[]}
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Gold.Api.Models.KuwaitTurk.FxRate" -->
+        <member name="P:Gold.Api.Models.Transactions.BuyGoldEftParamModel.BankId">
+            <summary>
+             Bank Id si
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.BuyGoldEftParamModel.UserId">
+            <summary>
+             UserId si
+            </summary>
+        </member>
+        <member name="T:Gold.Api.Models.Transactions.TransferRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.TransferRequestId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.GramsOfGold">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.Source">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.SourceEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.DestinationUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.DestinationEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.RequestDateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.Comments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gold.Api.Models.Transactions.TransferRequestModel.Photo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Gold.Api.Models.Transactions.UserBankTransferRequestModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Robots.ExpectedCashChecker.SearchExpected(Gold.Core.Vendors.ExpectedCash)">
+            <summary>
+            Asynchronously searches expected cash in kt transactions
+            </summary>
+            <param name="expectedCash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Robots.VendorExpectedChecker.SearchExpected(Gold.Core.Vendors.VendorExpected)">
+            <summary>
+            Asynchronously searches expected cash in kt transactions
+            </summary>
+            <param name="expectedCash"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Services.AIService.CheckIn(System.Guid)">
+            <summary>
+            Each time a user checks for new Notifications
+            Checks in here
+            </summary>
+            <param name="userId"></param>
+        </member>
+        <member name="M:Gold.Api.Services.AIService.RegisterOnlineStatus(System.Guid)">
+            <summary>
+            When a User logins the user registers its online status
+            Where User never received initial Data (events and transactions)
+            And stores Users current Records
+            </summary>
+            <param name="userId"></param>
+        </member>
+        <member name="M:Gold.Api.Services.AIService.GetUserStatus(System.Guid)">
+            <summary>
+            Returns UserStatus of given userId
+            if user did not received first data then it returns true for all
+            if since last check user TransactionCount or EventsCount changes returns true for those
+            otherwise returns status false
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Services.AIService.GetRecords(System.Guid)">
+            <summary>
+            Returns user records
+            UserRecords hold EventsWeddingsCount TransactionCount
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gold.Api.Services.EmailService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Services.EmailService.InformFintagAltinBozdur(System.String,System.String,System.Decimal,System.Decimal,System.Decimal,System.Decimal,System.Guid,System.Guid,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="IBAN"></param>
+            <param name="kur"></param>
+            <param name="amountTL"></param>
+            <param name="amountGram"></param>
+            <param name="odenmesiGereken"></param>
+            <param name="normalTransferId"></param>
+            <param name="transId"></param>
+        </member>
+        <member name="M:Gold.Api.Services.EmailService.InformFintagBankEFTRequest(System.String,System.String,System.Decimal,System.Decimal,System.Decimal,System.Int32,System.DateTime,System.Guid,System.Guid,System.Guid,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="bankName"></param>
+            <param name="kur"></param>
+            <param name="amountTL"></param>
+            <param name="amountGram"></param>
+            <param name="code"></param>
+            <param name="codeStartDate"></param>
+            <param name="bankTrasferId"></param>
+            <param name="normalTransferId"></param>
+            <param name="transId"></param>
+        </member>
+        <member name="M:Gold.Api.Services.EmailService.SendEmail(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Sends email to email address with subject and message
+            email message can be html in that case ishtml must be true
+            </summary>
+            <param name="email"></param>
+            <param name="subject"></param>
+            <param name="message"></param>
+            <param name="isHtml"></param>
+        </member>
+        <member name="M:Gold.Api.Services.EmailService.SendEmailAsync(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Asynchrounously send email
+            </summary>
+            <param name="email"></param>
+            <param name="subject"></param>
+            <param name="message"></param>
+            <param name="isHtml"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gold.Api.Services.ExpectedCashService.DoWorkParams">
+            <summary>
+            Class that represents do work params, 
+            Ktt transaction
+            List of expecteds
+            and first last ids
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.UpdateVendorData(Gold.Core.Vendors.VendorData)">
+            <summary>
+            depreceated
+            </summary>
+            <param name="vendorData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.DoWorkNewVersionRealBuy(Gold.Api.Services.ExpectedCashService.DoWorkParams)">
+            <summary>
+            Does completes buy gold/silver from KT
+            </summary>
+            <param name="workParams">Parameters for the job</param>
+            <returns>List of objects such as FinalizedTransaction</returns>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.DoWorkTimeoutChecker">
+            <summary>
+            to be tested
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.DoWorkNewVersion(System.Object)">
+            <summary>
+            Does the work for buying gold/silver from KT
+            </summary>
+            <param name="state">unused state</param>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.CreateBegin">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Services.ExpectedCashService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gold.Api.Services.VendorBuySellFinalizeService">
+            <summary>
+            Service that handles Finalize Transaction Actions for vendor Systems
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Services.VendorBuySellFinalizeService.#ctor">
+            <summary>
+            Constructs the VendorBuySellFinalizeService
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:Gold.Api.Services.VendorBuySellFinalizeService.SetAutomatics(System.Collections.Generic.Dictionary{System.Guid,System.Boolean})">
+            <summary>
+            Sets automatic buy status for all given vendors
+            </summary>
+            <param name="automatics"></param>
+        </member>
+        <member name="M:Gold.Api.Services.VendorBuySellFinalizeService.SetAutomaticSells(System.Collections.Generic.Dictionary{System.Guid,System.Boolean})">
+            <summary>
+            Sets automatic sell status for all vendor sells
+            </summary>
+            <param name="automatics"></param>
+        </member>
+        <member name="M:Gold.Api.Services.VendorBuySellFinalizeService.GetCodeOf(Gold.Core.Vendors.VendorExpected)">
+            <summary>
+            FNTG-GLD1-DAYI-3421
+            </summary>
+            <param name="expected"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Utilities.KuwaitAccessHandler.SignSHA256RSA(System.String)">
+            <summary>
+            Signs the given input with sha256 rsa algorithm
+            </summary>
+            <param name="input">string to be signed</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Utilities.SiPay.#ctor">
+            <summary>
+            Private constructor so this class can not be freely initialized
+            </summary>
+        </member>
+        <member name="M:Gold.Api.Utilities.SiPay.StartServices">
+            <summary>
+            Starts the Sipay services as singleton object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Utilities.SiPay.Pay3DSecure(Gold.Api.Models.SiPay.Pay3DParamModel)">
+            <summary>
+            Bu method kullanılarak ödeme başlatılır
+            </summary>
+            <param name="pay3D">pay3d için gerekli data </param>
+        </member>
+        <member name="M:Gold.Api.Utilities.Utility.AlmosEqualsName(System.String,System.String)">
+            <summary>
+            name1 = Arda Ahmet Alemdar
+            name2 = Arda Alemdar
+            result == true
+            
+            </summary>
+            <param name="name1"></param>
+            <param name="name2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gold.Api.Utilities.Utility.ValidPhone(System.String,Gold.Domain.Users.Interfaces.IUsersRepository)">
+            <summary>
+            0544 898 0702
+            5448980702
+            </summary>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication2.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            changed this to Host to WebHost for testing on Server IIS
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

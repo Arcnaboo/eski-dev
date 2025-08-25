@@ -1,0 +1,15 @@
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Domain.deps.json
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Domain.dll
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Domain.pdb
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Core.dll
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Core.pdb
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.csproj.AssemblyReference.cache
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.AssemblyInfoInputs.cache
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.AssemblyInfo.cs
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.csproj.CoreCompileInputs.cache
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.csproj.CopyComplete
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.dll
+C:\visualstudio - dev\Gold.Domain\obj\Release\netcoreapp3.0\Gold.Domain.pdb
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Domain.xml
+C:\visualstudio - dev\Gold.Domain\bin\Release\netcoreapp3.0\Gold.Core.xml

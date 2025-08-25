@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gold.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Gold.Domain.Transactions.Interfaces.ITransactionsRepository">
+            <summary>
+            Donation
+            CustomEvent
+            QRWithdrawal
+            Wedding
+            VirtualPost
+            GoldDay
+            BankWithdrawal
+            Internal
+            </summary>
+        </member>
+    </members>
+</doc>
